@@ -1,0 +1,118 @@
+---
+const { numberToShow = 6 } = Astro.props;
+
+// Simule une base de données (future source dynamique)
+const filmList = [
+  {
+    title: "Film 1",
+    thumbnail: "https://img.youtube.com/vi/rYoZgpAEkFs/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/rYoZgpAEkFs",
+  },
+  {
+    title: "Film 2",
+    thumbnail: "https://img.youtube.com/vi/ysz5S6PUM-U/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/ysz5S6PUM-U",
+  },
+  {
+    title: "Film 3",
+    thumbnail: "https://img.youtube.com/vi/eOrNdBpGMv8/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/eOrNdBpGMv8",
+  },
+  {
+    title: "Film 4",
+    thumbnail: "https://img.youtube.com/vi/TcMBFSGVi1c/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/TcMBFSGVi1c",
+  },
+  {
+    title: "Film 5",
+    thumbnail: "https://img.youtube.com/vi/U9BwWKXjVaI/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/U9BwWKXjVaI",
+  },
+  {
+    title: "Film 6",
+    thumbnail: "https://img.youtube.com/vi/l3vVQrFA4J0/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/l3vVQrFA4J0",
+  },
+  {
+    title: "Film 7",
+    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  },
+];
+
+// On coupe la liste selon la variable passée
+const displayedFilms = filmList.slice(0, numberToShow);
+---
+
+<section class="film-catalog">
+  <h2>Catalogue de Films</h2>
+  <div class="film-grid">
+    {displayedFilms.map(film => (
+      <div class="film-card">
+        <div class="video-thumbnail">
+          <iframe
+            src={film.videoUrl}
+            title={film.title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <h3>{film.title}</h3>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .film-catalog {
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  .film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+  }
+
+  .film-card {
+    background-color: #222;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .film-card:hover {
+    transform: scale(1.02);
+  }
+
+  .video-thumbnail {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+  }
+
+  .video-thumbnail iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+h2 {
+  color: #555;
+}
+
+  h3 {
+    padding: 5px;
+    margin-left: 15px;
+    font-size: 1rem;
+  }
+</style>

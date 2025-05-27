@@ -1,0 +1,57 @@
+---
+import Aboutme from '../components/AboutmeSection.astro';
+import FilmSection from '../components/FilmSection.astro';
+import Layout from '../layouts/Layout.astro';
+import PlaceholderImage from '../assets/placeholder.webp';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Aboutme />
+	<FilmSection
+		title="Court métrage numéro 1"
+		portraitImage={PlaceholderImage.src}
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+		description2="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
+		assetsLoad="eager"
+		filmSide="right"
+		backgroundColor="#555"
+		textColor="#fff"
+	/>
+	<FilmSection
+		title="Court métrage numéro 2"
+		portraitImage={PlaceholderImage.src}
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+		description2="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
+		assetsLoad="lazy"
+		filmSide="left"
+		backgroundColor=""
+		textColor="#555"
+	/>
+	<FilmSection
+		title="Court métrage numéro 3"
+		portraitImage={PlaceholderImage.src}
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis."
+		description2="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
+		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
+		assetsLoad="lazy"
+		filmSide="right"
+		backgroundColor="#555"
+		textColor="#fff"
+	/>
+	<FilmSection
+		title="Court métrage numéro 3"
+		portraitImage={PlaceholderImage.src}
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis."
+		description2="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
+		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
+		assetsLoad="lazy"
+		filmSide="left"
+		backgroundColor=""
+		textColor="#555"
+	/>
+</Layout>
