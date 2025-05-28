@@ -1,4 +1,9 @@
-<section class="about-section">
+---
+// Importing CSS Variables for consistent styling
+import '../styles/variables.css';
+---
+
+<section class="contact-section">
     <h2>Mes réseaux</h2>
     <div class="button_links_container">
         <a class="button_link link_ig" href="">
@@ -34,23 +39,23 @@
 </section>
 
 <style>
-    .about-section {
+    .contact-section {
         padding: 20px;
         border-radius: 8px;
         max-width: 1200px;
         margin: 20px auto;
     }
 
-    h2 {
-        color: #555;
+    .contact-section h2 {
+        color: var(--colorPrimary);
     }
 
-    p {
+    .contact-section p {
         line-height: 1.6;
-        color: #555;
+        color: var(--colorPrimary);
     }
 
-    .button_links_container {
+    .contact-section .button_links_container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
@@ -62,7 +67,7 @@
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: white;
+        color: var(--colorWhite);
         border-radius: 5px;
         padding: 10px 15px;
         font-size: 16px;
@@ -71,36 +76,36 @@
 
     .button_link svg {
         margin-right: 10px;
-        fill: white;
+        fill: var(--var(--colorWhite));
     }
 
     /* Instagram */
-    .link_ig { background: #c13584; border: 1px solid #c13584; }
-    .link_ig:hover { background: white; color: #c13584; }
-    .link_ig:hover svg { fill: #c13584; }
+    .link_ig { background: var(--colorIg); border: 1px solid var(--colorIg); }
+    .link_ig:hover { background: var(--colorWhite); color: var(--colorIg); }
+    .link_ig:hover svg { fill: var(--colorIg); }
 
     /* YouTube */
-    .link_ytb { background: #bb0000; border: 1px solid #bb0000; }
-    .link_ytb:hover { background: white; color: #bb0000; }
-    .link_ytb:hover svg { fill: #bb0000; }
+    .link_ytb { background: var(--colorYtb); border: 1px solid var(--colorYtb); }
+    .link_ytb:hover { background: var(--colorWhite); color: var(--colorYtb); }
+    .link_ytb:hover svg { fill: var(--colorYtb); }
 
-    /* Facebook */
-    .link_fb { background: #1877F2; border: 1px solid #1877F2; }
-    .link_fb:hover { background: white; color: #1877F2; }
-    .link_fb:hover svg { fill: #1877F2; }
+    /* L3 */
+    .link_fb { background: var(--colorL3); border: 1px solid var(--colorL3); }
+    .link_fb:hover { background: var(--colorWhite); color: var(--colorL3); }
+    .link_fb:hover svg { fill: var(--colorL3); }
 
-    /* Twitter/X */
-    .link_x { background: #000000; border: 1px solid #000000; }
-    .link_x:hover { background: white; color: #000000; }
-    .link_x:hover svg { fill: #000000; }
+    /* L4 */
+    .link_x { background: var(--colorL4); border: 1px solid var(--colorL4); }
+    .link_x:hover { background: var(--colorWhite); color: var(--colorL4); }
+    .link_x:hover svg { fill: var(--colorL4); }
 
-    /* LinkedIn */
-    .link_ln { background: #0077b5; border: 1px solid #0077b5; }
-    .link_ln:hover { background: white; color: #0077b5; }
-    .link_ln:hover svg { fill: #0077b5; }
+    /* L5 */
+    .link_ln { background: var(--colorL5); border: 1px solid var(--colorL5); }
+    .link_ln:hover { background: var(--colorWhite); color: var(--colorL5); }
+    .link_ln:hover svg { fill: var(--colorL5); }
 
     @media (max-width: 768px) {
-        .about-section {
+        .contact-section {
             padding: 20px;
             padding-top: 40px;
             padding-bottom: 0px;
