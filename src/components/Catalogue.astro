@@ -46,6 +46,16 @@ const displayedFilms = filmList.slice(0, numberToShow);
 
 <section class="film-catalog">
   <h2>Catalogue de Films</h2>
+  <div class="recherche-container">
+    <form class="recherche-form">
+      <input
+        type="text"
+        placeholder="Rechercher un film..."
+        class="recherche-input"
+        aria-label="Rechercher un film"
+      />
+      <button type="submit" class="recherche-button">Rechercher</button>
+  </div>
   <div class="film-grid">
     {displayedFilms.map(film => (
       <div class="film-card">
@@ -106,13 +116,54 @@ const displayedFilms = filmList.slice(0, numberToShow);
     border: none;
   }
 
-h2 {
-  color: #555;
-}
+  .recherche-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .recherche-form {
+    display: flex;
+    gap: 10px;
+  }
+
+  .recherche-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+  }
+
+  .recherche-button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  h2 {
+    color: #555;
+  }
 
   h3 {
     padding: 5px;
     margin-left: 15px;
     font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .film-grid {
+      display: grid;
+      grid-template-columns: none;
+      gap: 20px;
+    }
+    
+    .film-catalog {
+      padding: 20px;
+      padding-top: 40px;
+      padding-bottom: 0px;
+    }
   }
 </style>

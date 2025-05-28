@@ -2,22 +2,22 @@
 import background from '../assets/placeholder.webp';
 ---
 
-<footer>
-    <div class="footer">
-        <img src={background.src} alt="Background" class="background" />
-        <div class="content">
-            <h1 class="footer-title">TITRE DU SITE</h1>
-            <p>Titre titre, titre titre, titre titre, titre titre</p>
-        </div>
-    </div>
-</footer>
-<div class="navigation-menu">
-    <nav>
+<div class="navigation-menu" style="margin-top: 40px;">
+    <nav style="transform: translateY(-50%);">
         <a href="/" class="button">ACCUEIL</a>
         <a href="/catalogue" class="button">MES FILMS</a>
         <a href="/contact" class="button">CONTACT</a>
     </nav>
 </div>
+<footer>
+    <div class="header">
+        <img src={background.src} alt="Background" class="background" loading="lazy" />
+        <div class="content">
+            <h1 class="header-title">TITRE DU SITE</h1>
+            <p>Titre titre, titre titre, titre titre, titre titre</p>
+        </div>
+    </div>
+</footer>
 
 <style>
     footer {
@@ -26,7 +26,7 @@ import background from '../assets/placeholder.webp';
         text-align: center;
         color: white;
     }
-
+    
     .background {
         position: absolute;
         top: 0;
@@ -38,19 +38,19 @@ import background from '../assets/placeholder.webp';
         filter: brightness(0.5);
     }
 
-    .footer-title {
+    .header-title {
         margin: 0;
         font-size: 2em;
     }
 
-    .navigation-menu {
+    .navigation-menu {  
+        height: 0;
         display: grid;
         justify-content: center;
-    }
+}
 
-    .navigation-menu nav {
+    .navigation-menu nav {  
         text-align: center;
-        transform: translateY(-50%);
         background: darkgray;
         padding: 10px 15px;
     }
@@ -67,4 +67,5 @@ import background from '../assets/placeholder.webp';
     a.button:hover {
         color: red;
     }
+    
 </style>

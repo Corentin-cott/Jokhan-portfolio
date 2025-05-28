@@ -1,4 +1,4 @@
-<section>
+<section class="about-section">
     <h2>Qui suis-je ?</h2>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -15,7 +15,7 @@
 </section>
 
 <style>
-    section {
+    .about-section {
         padding: 20px;
         border-radius: 8px;
         max-width: 1200px;
@@ -29,5 +29,13 @@
     p {
         line-height: 1.6;
         color: #555;
+    }
+    
+    @media (max-width: 768px) {        
+        .about-section {
+            padding: 20px;
+            padding-top: 40px;
+            padding-bottom: 0px;
+        }
     }
 </style>
