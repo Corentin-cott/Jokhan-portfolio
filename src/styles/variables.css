@@ -4,6 +4,7 @@
     --colorSecondary: #333;
     --colorTertiary: #858585;
     --linkHover: #ff0000;
+    --backgroundColor: #fff;
     --colorWhite: #fff;
     --colorBlack: #000;
     --colorYtb: #bb0000;
@@ -13,13 +14,15 @@
     --colorL5: #06aa45;
     --maxWidth: 1200px;
     --imageAlpha: 0.5;
+    /* */
 
-    /* Dark mode variables */
-    --colorPrimary: #555;
-    --colorSecondary: #333;
-    --colorTertiary: #858585;
+    /* Dark mode variables
+    --colorPrimary: #ffffff;
+    --colorSecondary: #000000;
+    --colorTertiary: #000000;
     --linkHover: #ff0000;
-    --colorWhite: #fff;
+    --backgroundColor: #000000;
+    --colorWhite: #ffffff;
     --colorBlack: #000;
     --colorYtb: #bb0000;
     --colorIg: #c13584;
@@ -28,4 +31,5 @@
     --colorL5: #06aa45;
     --maxWidth: 1200px;
     --imageAlpha: 0.5;
+    /* */
 }
