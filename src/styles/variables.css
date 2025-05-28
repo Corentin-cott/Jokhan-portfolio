@@ -1,0 +1,39 @@
+:root {
+    /* Light mode colors */
+    --colorPrimary: #555;
+    --colorSecondary: #333;
+    --colorTertiary: #858585;
+    --colorQuaternary: #d8d8d8;
+    --textOverBackground: #000;
+    --linkHover: #ff0000;
+    --backgroundColor: #fff;
+    --colorWhite: #fff;
+    --colorBlack: #000;
+    --colorYtb: #bb0000;
+    --colorIg: #c13584;
+    --colorL3: #000000;
+    --colorL4: #0077b5;
+    --colorL5: #06aa45;
+    --maxWidth: 1200px;
+    --imageAlpha: 0.5;
+    /* */
+
+    /* Dark mode variables
+    --colorPrimary: #ffffff;
+    --colorSecondary: #000000;
+    --colorTertiary: #000000;
+    --colorQuaternary: #2b2b2b;
+    --textOverBackground: #ffffff;
+    --linkHover: #ff0000;
+    --backgroundColor: #000000;
+    --colorWhite: #ffffff;
+    --colorBlack: #000;
+    --colorYtb: #bb0000;
+    --colorIg: #c13584;
+    --colorL3: #000000;
+    --colorL4: #0077b5;
+    --colorL5: #06aa45;
+    --maxWidth: 1200px;
+    --imageAlpha: 0.5;
+    /* */
+}

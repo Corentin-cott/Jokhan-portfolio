@@ -1,6 +1,7 @@
 ---
+import '../styles/variables.css';
 import Aboutme from '../components/AboutmeSection.astro';
-import FilmSection from '../components/FilmSection.astro';
+import FilmSection from '../components/SingleFilmSection.astro';
 import Layout from '../layouts/Layout.astro';
 import PlaceholderImage from '../assets/placeholder.webp';
 
@@ -18,8 +19,8 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="eager"
 		filmSide="right"
-		backgroundColor="#555"
-		textColor="#fff"
+		backgroundColor="dark"
+		textColor="light"
 	/>
 	<FilmSection
 		title="Court métrage numéro 2"
@@ -29,8 +30,8 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="lazy"
 		filmSide="left"
-		backgroundColor=""
-		textColor="#555"
+		backgroundColor="light"
+		textColor="dark"
 	/>
 	<FilmSection
 		title="Court métrage numéro 3"
@@ -40,8 +41,8 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="lazy"
 		filmSide="right"
-		backgroundColor="#555"
-		textColor="#fff"
+		backgroundColor="dark"
+		textColor="light"
 	/>
 	<FilmSection
 		title="Court métrage numéro 3"
@@ -51,7 +52,7 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="lazy"
 		filmSide="left"
-		backgroundColor=""
-		textColor="#555"
+		backgroundColor="light"
+		textColor="dark"
 	/>
 </Layout>

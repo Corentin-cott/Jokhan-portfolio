@@ -1,14 +1,8 @@
 ---
+import '../styles/variables.css';
 import background from '../assets/placeholder.webp';
 ---
 
-<div class="navigation-menu" style="margin-top: 40px;">
-    <nav style="transform: translateY(-50%);">
-        <a href="/" class="button">ACCUEIL</a>
-        <a href="/catalogue" class="button">MES FILMS</a>
-        <a href="/contact" class="button">CONTACT</a>
-    </nav>
-</div>
 <footer>
     <div class="header">
         <img src={background.src} alt="Background" class="background" loading="lazy" />
@@ -18,27 +12,34 @@ import background from '../assets/placeholder.webp';
         </div>
     </div>
 </footer>
+<div class="navigation-menu">
+    <nav style="transform: translateY(-550%); z-index: 2;">
+        <a href="/" class="button">ACCUEIL</a>
+        <a href="/catalogue" class="button">MES FILMS</a>
+        <a href="/contact" class="button">CONTACT</a>
+    </nav>
+</div>
 
 <style>
     footer {
         position: relative;
         padding: 100px 10px;
         text-align: center;
-        color: white;
+        color: var(--colorWhite);
+        z-index: 1;
     }
     
-    .background {
+    footer .background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
         object-fit: cover;
-        filter: brightness(0.5);
+        filter: brightness(var(--imageAlpha));
     }
 
-    .header-title {
+    footer .content .header-title {
         margin: 0;
         font-size: 2em;
     }
@@ -47,25 +48,31 @@ import background from '../assets/placeholder.webp';
         height: 0;
         display: grid;
         justify-content: center;
-}
+    }
 
     .navigation-menu nav {  
         text-align: center;
-        background: darkgray;
+        background: var(--colorTertiary);
         padding: 10px 15px;
     }
 
-    a.button {
+    .navigation-menu nav a.button {
         display: inline-block;
         padding: 10px 20px;
-        color: white;
+        color: var(--colorWhite);
         text-decoration: none;
         border-radius: 5px;
         margin-right: 10px;
     }
 
-    a.button:hover {
-        color: red;
+    .navigation-menu nav a.button:hover {
+        color: var(--linkHover);
     }
     
+    /* If media screen is less than 768px, stack the columns */
+    @media (max-width: 768px) {
+        .navigation-menu {
+            display: none;
+        }
+    }
 </style>

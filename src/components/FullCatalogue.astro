@@ -1,7 +1,8 @@
 ---
+import '../styles/variables.css';
 const { numberToShow = 6 } = Astro.props;
 
-// Simule une base de données (future source dynamique)
+// Simule une base de données
 const filmList = [
   {
     title: "Film 1",
@@ -77,68 +78,37 @@ const displayedFilms = filmList.slice(0, numberToShow);
 
 <style>
   .film-catalog {
-    max-width: 1200px;
     padding: 20px;
     border-radius: 8px;
-    max-width: 1200px;
+    max-width: var(--maxWidth);
     margin: 20px auto;
   }
-
-  .film-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 20px;
-  }
-
-  .film-card {
-    background-color: #222;
-    color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s;
-  }
-
-  .film-card:hover {
-    transform: scale(1.02);
-  }
-
-  .video-thumbnail {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #000;
-  }
-
-  .video-thumbnail iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  .recherche-container {
+  
+  /* Recherche input styles */
+  .film-catalog .recherche-container {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
   }
 
-  .recherche-form {
+  .recherche-container .recherche-form {
     display: flex;
     gap: 10px;
     width: 100%;
   }
 
-  .recherche-input {
+  .recherche-form .recherche-input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--colorTertiary);
     border-radius: 4px;
     width: inherit;
+    color: var(--colorPrimary);
   }
 
-  .recherche-button {
+  .recherche-form .recherche-button {
     padding: 10px 15px;
-    background-color: #333;
-    color: white;
+    background-color: var(--colorSecondary);
+    color: var(--colorWhite);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -146,18 +116,52 @@ const displayedFilms = filmList.slice(0, numberToShow);
     width: 150px;
   }
 
-  h2 {
-    color: #555;
+  /* Film grid styles */
+  .film-catalog .film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
   }
 
-  h3 {
+  .film-grid .film-card {
+    background-color: var(--colorSecondary);
+    color: var(--colorWhite);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .film-grid .film-card:hover {
+    transform: scale(1.02);
+  }
+
+  .film-card .video-thumbnail {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--colorBlack);
+  }
+
+  .film-card .video-thumbnail iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Text and mobile styles */
+  .film-catalog h2 {
+    color: var(--colorPrimary);
+  }
+
+  .film-card h3 {
     padding: 5px;
     margin-left: 15px;
     font-size: 1rem;
   }
 
   @media (max-width: 768px) {
-    .film-grid {
+    .film-catalog .film-grid {
       display: grid;
       grid-template-columns: none;
       gap: 20px;
