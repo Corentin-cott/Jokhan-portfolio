@@ -3,6 +3,8 @@
     --colorPrimary: #555;
     --colorSecondary: #333;
     --colorTertiary: #858585;
+    --colorQuaternary: #d8d8d8;
+    --textOverBackground: #000;
     --linkHover: #ff0000;
     --backgroundColor: #fff;
     --colorWhite: #fff;
@@ -20,6 +22,8 @@
     --colorPrimary: #ffffff;
     --colorSecondary: #000000;
     --colorTertiary: #000000;
+    --colorQuaternary: #2b2b2b;
+    --textOverBackground: #ffffff;
     --linkHover: #ff0000;
     --backgroundColor: #000000;
     --colorWhite: #ffffff;
