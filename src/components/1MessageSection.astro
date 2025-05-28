@@ -2,7 +2,7 @@
 const {padding_top, padding_bottom, margin_top, margin_bottom} = Astro.props;
 ---
 
-<section class="about-section" style={`padding-top: ${padding_top ?? '20px'}; padding-bottom: ${padding_bottom ?? '20px'}; margin-top: ${margin_top ?? '20px'}; margin-bottom: ${margin_bottom ?? '20px'};`};>
+<section class="message-section" style={`padding-top: ${padding_top ?? '20px'}; padding-bottom: ${padding_bottom ?? '20px'}; margin-top: ${margin_top ?? '20px'}; margin-bottom: ${margin_bottom ?? '20px'};`};>
     <h2>Quelque chose d'écrit ici</h2>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -19,24 +19,24 @@ const {padding_top, padding_bottom, margin_top, margin_bottom} = Astro.props;
 </section>
 
 <style>
-    .about-section {
+    .message-section {
         padding: 20px;
         border-radius: 8px;
-        max-width: 1200px;
+        max-width: var(--maxWidth);
         margin: 20px auto;
     }
 
-    h2 {
-        color: #555;
+    .message-section h2 {
+        color: var(--colorPrimary);
     }
 
-    p {
+    .message-section p {
         line-height: 1.6;
-        color: #555;
+        color: var(--colorPrimary);
     }
     
     @media (max-width: 768px) {        
-        .about-section {
+        .message-section {
             padding: 20px;
             padding-top: 40px;
             padding-bottom: 0px;
