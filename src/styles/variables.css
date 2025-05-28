@@ -1,4 +1,9 @@
 :root {
+    /* Non color variables */
+    --maxWidth: 1200px;
+    --imageAlpha: 0.5;
+    --fontFamily: 'Open Sans', sans-serif;
+
     /* Light mode colors */
     --colorPrimary: #555;
     --colorSecondary: #333;
@@ -14,11 +19,9 @@
     --colorL3: #000000;
     --colorL4: #0077b5;
     --colorL5: #06aa45;
-    --maxWidth: 1200px;
-    --imageAlpha: 0.5;
     /* */
 
-    /* Dark mode variables
+    /* light mode variables
     --colorPrimary: #ffffff;
     --colorSecondary: #000000;
     --colorTertiary: #000000;
@@ -33,7 +36,41 @@
     --colorL3: #000000;
     --colorL4: #0077b5;
     --colorL5: #06aa45;
-    --maxWidth: 1200px;
-    --imageAlpha: 0.5;
+    /* */
+
+    --alwaysBlack: #000000;
+    --alwaysWhite: #ffffff;
+    --alwaysDarkGray: #333333;
+    --alwaysMediumGray: #555555;
+    --alwaysLightGray: #d8d8d8;
+
+    /* Light mode variables (Better naming) */
+    --light-background-color: #fff;
+    --light-contrast-over-background-very-small: #d8d8d8;
+    --light-contrast-over-background-small: #858585;
+    --light-contrast-over-background-medium: #555;
+    --light-contrast-over-background-large: #333;
+    --light-inerted-background-color: #000;
+    --light-link-hover-color: #ff0000;
+    --light-ig-color: #c13584;
+    --light-ytb-color: #bb0000;
+    --light-l3-color: #c98900;
+    --light-l4-color: #0077b5;
+    --light-l5-color: #06aa45;
+    /* */
+
+    /* light mode variables (Better naming) */
+    --dark-background-color: #000000;
+    --dark-contrast-over-background-very-small: #333;
+    --dark-contrast-over-background-small: #555;
+    --dark-contrast-over-background-medium: #707070;
+    --dark-contrast-over-background-large: #b9b9b9;
+    --dark-inerted-background-color: #ffffff;
+    --dark-link-hover-color: #ff0000;
+    --dark-ig-color: #c13584;
+    --dark-ytb-color: #bb0000;
+    --dark-l3-color: #c98900;
+    --dark-l4-color: #0077b5;
+    --dark-l5-color: #06aa45;
     /* */
 }

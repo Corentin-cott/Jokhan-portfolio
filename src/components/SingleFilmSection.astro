@@ -13,23 +13,6 @@ let {
   textColor,
 } = Astro.props;
 const isVideoLeft = filmSide === "left";
-
-if (backgroundColor === "dark") {
-  // We base it on CSS variables
-  backgroundColor = "var(--colorPrimary)";
-} else if (backgroundColor === "light") {
-  backgroundColor = "var(--backgroundColor)";
-} else {
-  backgroundColor = textColor ?? "#fff"; // Default to white if not specified
-}
-
-if (textColor === "dark") {
-  textColor = "var(--colorSecondary)";
-} else if (textColor === "light") {
-  textColor = "var(--backgroundColor)";
-} else {
-  textColor = "#fff"; // Default to white if not specified
-}
 ---
 
 <section

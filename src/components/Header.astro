@@ -25,7 +25,8 @@ import background from '../assets/placeholder.webp';
         position: relative;
         padding: 100px 10px;
         text-align: center;
-        color: var(--colorWhite);
+        color: var(--light-contrast-over-background-very-small);
+        z-index: 0;
     }
     
     header .background {
@@ -47,25 +48,25 @@ import background from '../assets/placeholder.webp';
         height: 0;
         display: grid;
         justify-content: center;
+        z-index: 2;
     }
 
     .navigation-menu nav {  
         text-align: center;
-        background: var(--colorTertiary);
+        background: var(--light-contrast-over-background-medium);
         padding: 10px 15px;
     }
 
     .navigation-menu nav a.button {
         display: inline-block;
         padding: 10px 20px;
-        color: var(--colorWhite);
+        color: var(--light-contrast-over-background-very-small);
         text-decoration: none;
         border-radius: 5px;
-        margin-right: 10px;
     }
 
     .navigation-menu nav a.button:hover {
-        color: var(--linkHover);
+        color: var(--light-link-hover-color);
     }
     
 </style>
