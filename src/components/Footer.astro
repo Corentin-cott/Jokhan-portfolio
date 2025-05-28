@@ -1,4 +1,5 @@
 ---
+import '../styles/variables.css';
 import background from '../assets/placeholder.webp';
 ---
 
@@ -24,7 +25,7 @@ import background from '../assets/placeholder.webp';
         position: relative;
         padding: 100px 10px;
         text-align: center;
-        color: white;
+        color: var(--colorWhite);
     }
     
     .background {
@@ -51,21 +52,21 @@ import background from '../assets/placeholder.webp';
 
     .navigation-menu nav {  
         text-align: center;
-        background: darkgray;
+        background: var(--colorTertiary);
         padding: 10px 15px;
     }
 
     a.button {
         display: inline-block;
         padding: 10px 20px;
-        color: white;
+        color: var(--colorWhite);
         text-decoration: none;
         border-radius: 5px;
         margin-right: 10px;
     }
 
     a.button:hover {
-        color: red;
+        color: var(--linkHover);
     }
     
 </style>
