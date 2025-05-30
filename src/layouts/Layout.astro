@@ -30,3 +30,9 @@ import Footer from '../components/Footer.astro';
 		background-color: var(--light-background-color);
 	}
 </style>
+
+<script>
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		document.body.classList.add('dark-mode');
+	}
+</script>

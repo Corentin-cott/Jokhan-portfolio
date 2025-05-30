@@ -4,74 +4,136 @@
     --imageAlpha: 0.5;
     --fontFamily: 'Open Sans', sans-serif;
 
-    /* Color variables */
+    /* Couleurs fixes */
     --alwaysBlack: #000000;
     --alwaysWhite: #ffffff;
     --alwaysDarkGray: #333333;
     --alwaysMediumGray: #555555;
     --alwaysLightGray: #d8d8d8;
 
-    /* Light mode variables */
-    --light-background-color: #fff;
-    --light-big-gray: #555;
-    --light-film-card-desc: #333;
-    --light-contrast-over-background-very-small: #d8d8d8;
-    --light-contrast-over-background-small: #858585;
-    --light-contrast-over-background-medium: #555;
-    --light-contrast-over-background-large: #333;
-    --light-text-over-background: #333;
-    --light-inerted-background-color: #d8d8d8;
-    --light-link-hover-color: #ff0000;
-    --light-ig-color: #c13584;
-    --light-ytb-color: #bb0000;
-    --light-l3-color: #3d3a33;
-    --light-l4-color: #0077b5;
-    --light-l5-color: #06aa45;
-    
-    --light-singleCatalogueColor: #333;
-    --light-singleCatalogueBackgroundColor: #fff;
-    --light-singleCatalogueBorderColor: #fff;
-    --light-alt-singleCatalogueColor: #d8d8d8;
-    --light-alt-singleCatalogueBackgroundColor: #333;
-    --light-alt-singleCatalogueBorderColor: #333;
-    
-    --light-search-button-color: #555;
-    --light-search-button-hover-color: #fff;
-    --light-search-button-background-color: #fff;
-    --light-search-button-background-hover-color: #555;
-    --light-search-button-border-color: #555;
-    --light-search-button-border-hover-color: #fff;
-    /* */
+    /* Variables dynamiques - Mode clair par défaut */
+    --light-background-color: var(--lightmode-background-color);
+    --light-big-gray: var(--lightmode-big-gray);
+    --light-film-card-desc: var(--lightmode-film-card-desc);
+    --light-contrast-over-background-very-small: var(--lightmode-contrast-over-background-very-small);
+    --light-contrast-over-background-small: var(--lightmode-contrast-over-background-small);
+    --light-contrast-over-background-medium: var(--lightmode-contrast-over-background-medium);
+    --light-contrast-over-background-large: var(--lightmode-contrast-over-background-large);
+    --light-text-over-background: var(--lightmode-text-over-background);
+    --light-inerted-background-color: var(--lightmode-inerted-background-color);
+    --light-link-hover-color: var(--lightmode-link-hover-color);
+    --light-ig-color: var(--lightmode-ig-color);
+    --light-ytb-color: var(--lightmode-ytb-color);
+    --light-l3-color: var(--lightmode-l3-color);
+    --light-l4-color: var(--lightmode-l4-color);
+    --light-l5-color: var(--lightmode-l5-color);
 
-    /* dark mode variables */
-    --dark-background-color: #000000;
-    --dark-big-gray: #222;
-    --dark-film-card-desc: #000000;
-    --dark-contrast-over-background-very-small: #222;
-    --dark-contrast-over-background-small: #555;
-    --dark-contrast-over-background-medium: #707070;
-    --dark-contrast-over-background-large: #b9b9b9;
-    --dark-text-over-background: #d8d8d8;
-    --dark-inerted-background-color: #d8d8d8;
-    --dark-link-hover-color: #ff0000;
-    --dark-ig-color: #c13584;
-    --dark-ytb-color: #bb0000;
-    --dark-l3-color: #c98900;
-    --dark-l4-color: #0077b5;
-    --dark-l5-color: #06aa45;
-    
-    --dark-singleCatalogueColor: #d8d8d8;
-    --dark-singleCatalogueBackgroundColor: #000000;
-    --dark-singleCatalogueBorderColor: #000000;
-    --dark-alt-singleCatalogueColor: #d8d8d8;
-    --dark-alt-singleCatalogueBackgroundColor: #000000;
-    --dark-alt-singleCatalogueBorderColor: #d8d8d8;
+    --light-singleCatalogueColor: var(--lightmode-singleCatalogueColor);
+    --light-singleCatalogueBackgroundColor: var(--lightmode-singleCatalogueBackgroundColor);
+    --light-singleCatalogueBorderColor: var(--lightmode-singleCatalogueBorderColor);
+    --light-alt-singleCatalogueColor: var(--lightmode-alt-singleCatalogueColor);
+    --light-alt-singleCatalogueBackgroundColor: var(--lightmode-alt-singleCatalogueBackgroundColor);
+    --light-alt-singleCatalogueBorderColor: var(--lightmode-alt-singleCatalogueBorderColor);
 
-    --dark-search-button-color: #707070;
-    --dark-search-button-hover-color: #ff0000;
-    --dark-search-button-background-color: #000;
-    --dark-search-button-background-hover-color: #000;
-    --dark-search-button-border-color: #707070;
-    --dark-search-button-border-hover-color: #ff0000;
-    /* */
+    --light-search-button-color: var(--lightmode-search-button-color);
+    --light-search-button-hover-color: var(--lightmode-search-button-hover-color);
+    --light-search-button-background-color: var(--lightmode-search-button-background-color);
+    --light-search-button-background-hover-color: var(--lightmode-search-button-background-hover-color);
+    --light-search-button-border-color: var(--lightmode-search-button-border-color);
+    --light-search-button-border-hover-color: var(--lightmode-search-button-border-hover-color);
+
+    /* Variables spécifiques au mode clair */
+    --lightmode-background-color: #fff;
+    --lightmode-big-gray: #555;
+    --lightmode-film-card-desc: #333;
+    --lightmode-contrast-over-background-very-small: #d8d8d8;
+    --lightmode-contrast-over-background-small: #858585;
+    --lightmode-contrast-over-background-medium: #555;
+    --lightmode-contrast-over-background-large: #333;
+    --lightmode-text-over-background: #333;
+    --lightmode-inerted-background-color: #d8d8d8;
+    --lightmode-link-hover-color: #ff0000;
+    --lightmode-ig-color: #c13584;
+    --lightmode-ytb-color: #bb0000;
+    --lightmode-l3-color: #3d3a33;
+    --lightmode-l4-color: #0077b5;
+    --lightmode-l5-color: #06aa45;
+
+    --lightmode-singleCatalogueColor: #333;
+    --lightmode-singleCatalogueBackgroundColor: #fff;
+    --lightmode-singleCatalogueBorderColor: #fff;
+    --lightmode-alt-singleCatalogueColor: #d8d8d8;
+    --lightmode-alt-singleCatalogueBackgroundColor: #333;
+    --lightmode-alt-singleCatalogueBorderColor: #333;
+
+    --lightmode-search-button-color: #555;
+    --lightmode-search-button-hover-color: #fff;
+    --lightmode-search-button-background-color: #fff;
+    --lightmode-search-button-background-hover-color: #555;
+    --lightmode-search-button-border-color: #555;
+    --lightmode-search-button-border-hover-color: #fff;
+
+    /* Variables spécifiques au mode sombre */
+    --darkmode-background-color: #000000;
+    --darkmode-big-gray: #222;
+    --darkmode-film-card-desc: #000000;
+    --darkmode-contrast-over-background-very-small: #222;
+    --darkmode-contrast-over-background-small: #555;
+    --darkmode-contrast-over-background-medium: #707070;
+    --darkmode-contrast-over-background-large: #b9b9b9;
+    --darkmode-text-over-background: #d8d8d8;
+    --darkmode-inerted-background-color: #d8d8d8;
+    --darkmode-link-hover-color: #ff0000;
+    --darkmode-ig-color: #c13584;
+    --darkmode-ytb-color: #bb0000;
+    --darkmode-l3-color: #c98900;
+    --darkmode-l4-color: #0077b5;
+    --darkmode-l5-color: #06aa45;
+
+    --darkmode-singleCatalogueColor: #d8d8d8;
+    --darkmode-singleCatalogueBackgroundColor: #000000;
+    --darkmode-singleCatalogueBorderColor: #000000;
+    --darkmode-alt-singleCatalogueColor: #d8d8d8;
+    --darkmode-alt-singleCatalogueBackgroundColor: #000000;
+    --darkmode-alt-singleCatalogueBorderColor: #d8d8d8;
+
+    --darkmode-search-button-color: #707070;
+    --darkmode-search-button-hover-color: #ff0000;
+    --darkmode-search-button-background-color: #000;
+    --darkmode-search-button-background-hover-color: #000;
+    --darkmode-search-button-border-color: #707070;
+    --darkmode-search-button-border-hover-color: #ff0000;
+}
+
+:root.dark-mode {
+    /* Redéfinition des variables dynamiques pour le mode sombre */
+    --light-background-color: var(--darkmode-background-color);
+    --light-big-gray: var(--darkmode-big-gray);
+    --light-film-card-desc: var(--darkmode-film-card-desc);
+    --light-contrast-over-background-very-small: var(--darkmode-contrast-over-background-very-small);
+    --light-contrast-over-background-small: var(--darkmode-contrast-over-background-small);
+    --light-contrast-over-background-medium: var(--darkmode-contrast-over-background-medium);
+    --light-contrast-over-background-large: var(--darkmode-contrast-over-background-large);
+    --light-text-over-background: var(--darkmode-text-over-background);
+    --light-inerted-background-color: var(--darkmode-inerted-background-color);
+    --light-link-hover-color: var(--darkmode-link-hover-color);
+    --light-ig-color: var(--darkmode-ig-color);
+    --light-ytb-color: var(--darkmode-ytb-color);
+    --light-l3-color: var(--darkmode-l3-color);
+    --light-l4-color: var(--darkmode-l4-color);
+    --light-l5-color: var(--darkmode-l5-color);
+
+    --light-singleCatalogueColor: var(--darkmode-singleCatalogueColor);
+    --light-singleCatalogueBackgroundColor: var(--darkmode-singleCatalogueBackgroundColor);
+    --light-singleCatalogueBorderColor: var(--darkmode-singleCatalogueBorderColor);
+    --light-alt-singleCatalogueColor: var(--darkmode-alt-singleCatalogueColor);
+    --light-alt-singleCatalogueBackgroundColor: var(--darkmode-alt-singleCatalogueBackgroundColor);
+    --light-alt-singleCatalogueBorderColor: var(--darkmode-alt-singleCatalogueBorderColor);
+
+    --light-search-button-color: var(--darkmode-search-button-color);
+    --light-search-button-hover-color: var(--darkmode-search-button-hover-color);
+    --light-search-button-background-color: var(--darkmode-search-button-background-color);
+    --light-search-button-background-hover-color: var(--darkmode-search-button-background-hover-color);
+    --light-search-button-border-color: var(--darkmode-search-button-border-color);
+    --light-search-button-border-hover-color: var(--darkmode-search-button-border-hover-color);
 }
