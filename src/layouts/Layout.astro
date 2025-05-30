@@ -26,7 +26,13 @@ import Footer from '../components/Footer.astro';
 	html,
 	body {
 		margin: 0;
-        font-family: Arial,sans-serif;
-		background-color: var(--backgroundColor);
+        font-family: var(--fontFamily);
+		background-color: var(--light-background-color);
 	}
 </style>
+
+<script>
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		document.body.classList.add('dark-mode');
+	}
+</script>

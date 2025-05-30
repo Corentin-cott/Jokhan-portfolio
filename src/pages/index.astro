@@ -5,6 +5,13 @@ import FilmSection from '../components/SingleFilmSection.astro';
 import Layout from '../layouts/Layout.astro';
 import PlaceholderImage from '../assets/placeholder.webp';
 
+const singleCatalogueTextColor = 'var(--light-singleCatalogueColor)';
+const singleCatalogueBackgroundColor = 'var(--light-singleCatalogueBackgroundColor)';
+const singleCatalogueBorderColor = 'var(--light-singleCatalogueBorderColor)';
+const altSingleCatalogueTextColor = 'var(--light-alt-singleCatalogueColor)';
+const altSingleCatalogueBackgroundColor = 'var(--light-alt-singleCatalogueBackgroundColor)';
+const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColor)';
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -19,8 +26,9 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="eager"
 		filmSide="right"
-		backgroundColor="dark"
-		textColor="light"
+		backgroundColor={altSingleCatalogueBackgroundColor}
+		textColor={altSingleCatalogueTextColor}
+		borderColor={altSingleCatalogueBorderColor}
 	/>
 	<FilmSection
 		title="Court métrage numéro 2"
@@ -30,8 +38,9 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="lazy"
 		filmSide="left"
-		backgroundColor="light"
-		textColor="dark"
+		backgroundColor={singleCatalogueBackgroundColor}
+		textColor={singleCatalogueTextColor}
+		borderColor={singleCatalogueBorderColor}
 	/>
 	<FilmSection
 		title="Court métrage numéro 3"
@@ -41,8 +50,9 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="lazy"
 		filmSide="right"
-		backgroundColor="dark"
-		textColor="light"
+		backgroundColor={altSingleCatalogueBackgroundColor}
+		textColor={altSingleCatalogueTextColor}
+		borderColor={altSingleCatalogueBorderColor}
 	/>
 	<FilmSection
 		title="Court métrage numéro 3"
@@ -52,7 +62,8 @@ import PlaceholderImage from '../assets/placeholder.webp';
 		videoUrl="https://www.youtube.com/embed/rYoZgpAEkFs"
 		assetsLoad="lazy"
 		filmSide="left"
-		backgroundColor="light"
-		textColor="dark"
+		backgroundColor={singleCatalogueBackgroundColor}
+		textColor={singleCatalogueTextColor}
+		borderColor={singleCatalogueBorderColor}
 	/>
 </Layout>
