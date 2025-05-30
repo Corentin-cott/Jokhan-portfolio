@@ -11,13 +11,14 @@ let {
   filmSide,
   backgroundColor,
   textColor,
+  borderColor,
 } = Astro.props;
 const isVideoLeft = filmSide === "left";
 ---
 
 <section
   class="section-film"
-  style={`background: ${backgroundColor ?? "#555"}; color: ${textColor ?? "#fff"};`}
+  style={`background: ${backgroundColor ?? "#555"}; color: ${textColor ?? "#fff"} ; border: 1px solid ${borderColor ?? "#555"};`}
 >
   <h2>{title}</h2>
   <div class={`content-columns ${filmSide ? "video-left" : "video-right"}`}>
@@ -39,11 +40,6 @@ const isVideoLeft = filmSide === "left";
           <div class="description">
             <p>{description1}</p>
             <p>{description2}</p>
-            <div class="film-buttons">
-              <a class="button" href="/">
-                Voir le film
-              </a>
-            </div>
           </div>
           <div class="portrait-imagge">
             <img src={portraitImage} loading={assetsLoad} alt="Portrait" />
@@ -126,21 +122,12 @@ const isVideoLeft = filmSide === "left";
     border-radius: 8px;
   }
 
-  .section-film .content-columns .description .film-buttons {
-    margin-top: 10px;
-  }
-
-  .section-film .content-columns .description .film-buttons .button {
-    display: inline-block;
-    padding: 10px 20px;
-    color: var(--colorWhite);
-    text-decoration: none;
-    background-color: var(--colorSecondary);
-    border-radius: 5px;
-  }
-
   /* If media screen is less than 768px, stack the columns */
   @media (max-width: 768px) {
+    .section-film {
+      border-radius: 0;
+    }
+
     .section-film .content-columns {
       display: block;
     }

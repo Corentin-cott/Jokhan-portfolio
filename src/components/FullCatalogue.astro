@@ -103,18 +103,24 @@ const displayedFilms = filmList.slice(0, numberToShow);
     background-color: var(--light-background-color);
     border-radius: 4px;
     width: inherit;
-    color: var(--light-contrast-over-background-medium);
+    color: var(--light-text-over-background);
   }
 
   .recherche-form .recherche-button {
-    padding: 10px 15px;
-    background-color: var(--light-contrast-over-background-medium);
-    color: var(--light-contrast-over-background-very-small);
-    border: none;
+    color: var(--light-search-button-color);
+    background-color: var(--light-search-button-background-color);
+    border: 1px solid var(--light-search-button-border-color);
     border-radius: 4px;
+    padding: 10px 15px;
     cursor: pointer;
     height: 50px;
     width: 150px;
+  }
+
+  .recherche-form .recherche-button:hover {
+    color: var(--light-search-button-hover-color);
+    background-color: var(--light-search-button-background-hover-color);
+    border-color: var(--light-search-button-border-hover-color);
   }
 
   /* Film grid styles */
@@ -125,7 +131,7 @@ const displayedFilms = filmList.slice(0, numberToShow);
   }
 
   .film-grid .film-card {
-    background-color: var(--alwaysDarkGray);
+    background-color: var(--light-film-card-desc);
     color: var(--alwaysLightGray);
     border-radius: 8px;
     overflow: hidden;
