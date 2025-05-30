@@ -4,30 +4,14 @@
     --imageAlpha: 0.5;
     --fontFamily: 'Open Sans', sans-serif;
 
-    /* Light mode colors */
-    --colorPrimary: #ff0000;
-    --colorSecondary: #ff0000;
-    --colorTertiary: #ff0000;
-    --colorQuaternary: #ff0000;
-    --textOverBackground: #ff0000;
-    --linkHover: #ff0000;
-    --backgroundColor: #ff0000;
-    --colorWhite: #ff0000;
-    --colorBlack: #ff0000;
-    --colorYtb: #ff0000;
-    --colorIg: #ff0000;
-    --colorL3: #ff0000;
-    --colorL4: #ff0000;
-    --colorL5: #ff0000;
-    /* */
-
+    /* Color variables */
     --alwaysBlack: #000000;
     --alwaysWhite: #ffffff;
     --alwaysDarkGray: #333333;
     --alwaysMediumGray: #555555;
     --alwaysLightGray: #d8d8d8;
 
-    /* Light mode variables (Better naming) */
+    /* Light mode variables */
     --light-background-color: #fff;
     --light-big-gray: #555;
     --light-film-card-desc: #333;
@@ -59,35 +43,35 @@
     --light-search-button-border-hover-color: #fff;
     /* */
 
-    /* dark mode variables (Better naming) :*/
-    --light-background-color: #000000;
-    --light-big-gray: #222;
-    --light-film-card-desc: #000000;
-    --light-contrast-over-background-very-small: #222;
-    --light-contrast-over-background-small: #555;
-    --light-contrast-over-background-medium: #707070;
-    --light-contrast-over-background-large: #b9b9b9;
-    --light-text-over-background: #d8d8d8;
-    --light-inerted-background-color: #d8d8d8;
-    --light-link-hover-color: #ff0000;
-    --light-ig-color: #c13584;
-    --light-ytb-color: #bb0000;
-    --light-l3-color: #c98900;
-    --light-l4-color: #0077b5;
-    --light-l5-color: #06aa45;
+    /* dark mode variables */
+    --dark-background-color: #000000;
+    --dark-big-gray: #222;
+    --dark-film-card-desc: #000000;
+    --dark-contrast-over-background-very-small: #222;
+    --dark-contrast-over-background-small: #555;
+    --dark-contrast-over-background-medium: #707070;
+    --dark-contrast-over-background-large: #b9b9b9;
+    --dark-text-over-background: #d8d8d8;
+    --dark-inerted-background-color: #d8d8d8;
+    --dark-link-hover-color: #ff0000;
+    --dark-ig-color: #c13584;
+    --dark-ytb-color: #bb0000;
+    --dark-l3-color: #c98900;
+    --dark-l4-color: #0077b5;
+    --dark-l5-color: #06aa45;
     
-    --light-singleCatalogueColor: #d8d8d8;
-    --light-singleCatalogueBackgroundColor: #000000;
-    --light-singleCatalogueBorderColor: #000000;
-    --light-alt-singleCatalogueColor: #d8d8d8;
-    --light-alt-singleCatalogueBackgroundColor: #000000;
-    --light-alt-singleCatalogueBorderColor: #d8d8d8;
+    --dark-singleCatalogueColor: #d8d8d8;
+    --dark-singleCatalogueBackgroundColor: #000000;
+    --dark-singleCatalogueBorderColor: #000000;
+    --dark-alt-singleCatalogueColor: #d8d8d8;
+    --dark-alt-singleCatalogueBackgroundColor: #000000;
+    --dark-alt-singleCatalogueBorderColor: #d8d8d8;
 
-    --light-search-button-color: #707070;
-    --light-search-button-hover-color: #ff0000;
-    --light-search-button-background-color: #000;
-    --light-search-button-background-hover-color: #000;
-    --light-search-button-border-color: #707070;
-    --light-search-button-border-hover-color: #ff0000;
+    --dark-search-button-color: #707070;
+    --dark-search-button-hover-color: #ff0000;
+    --dark-search-button-background-color: #000;
+    --dark-search-button-background-hover-color: #000;
+    --dark-search-button-border-color: #707070;
+    --dark-search-button-border-hover-color: #ff0000;
     /* */
 }
