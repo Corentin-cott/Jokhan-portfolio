@@ -105,7 +105,7 @@
     --darkmode-search-button-border-hover-color: #ff0000;
 }
 
-:root.dark-mode {
+body.dark-mode {
     /* Redéfinition des variables dynamiques pour le mode sombre */
     --light-background-color: var(--darkmode-background-color);
     --light-big-gray: var(--darkmode-big-gray);

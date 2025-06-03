@@ -1,0 +1,48 @@
+---
+// src/components/DarkModeToggle.astro
+---
+<style>
+  #darkModeToggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 1rem;
+    font-size: 1.5rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  #darkModeToggle:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+  }
+</style>
+
+<button id="darkModeToggle" aria-label="Activer/désactiver le mode sombre">
+  🌓
+</button>
+
+<script is:inline>
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.body.classList.add('dark-mode');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('darkModeToggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem(
+        'theme',
+        document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+      );
+    });
+  });
+</script>
