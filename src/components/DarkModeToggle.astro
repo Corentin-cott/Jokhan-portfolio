@@ -1,31 +1,42 @@
----
-// src/components/DarkModeToggle.astro
----
-<style>
-  #darkModeToggle {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 1000;
-    padding: 0.75rem 1rem;
-    font-size: 1.5rem;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border: 2px solid var(--text-color);
-    border-radius: 999px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  #darkModeToggle:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
-  }
-</style>
-
 <button id="darkModeToggle" aria-label="Activer/désactiver le mode sombre">
   🌓
 </button>
+
+<style>
+  #darkModeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 0.75rem;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: transform .2s;
+  }
+
+  #darkModeToggle:hover {
+    transform: scale(1.2);
+  }
+
+    @media (max-width: 768px) {
+        #darkModeToggle {
+            position: fixed;
+            top: auto;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            z-index: 1000;
+            padding: 0.5rem 0.5rem;
+            font-size: 1rem;
+            transition: transform .1s;
+        }
+
+        #darkModeToggle:hover {
+            transform: scale(1.1);
+        }
+    }
+</style>
 
 <script is:inline>
   const savedTheme = localStorage.getItem('theme');
