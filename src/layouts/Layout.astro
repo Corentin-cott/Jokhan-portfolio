@@ -2,6 +2,7 @@
 import '../styles/variables.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import DarkModeToggle from '../components/DarkModeToggle.astro';
 ---
 
 <!doctype html>
@@ -9,11 +10,13 @@ import Footer from '../components/Footer.astro';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="google-site-verification" content="EoONZoXDhO63Qlj9OVtc6MqW1O-jzZ36hJ_qlQLjbS4" />
+		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<DarkModeToggle />
 		<Header />
 		<main>
 			<slot />
@@ -30,9 +33,3 @@ import Footer from '../components/Footer.astro';
 		background-color: var(--light-background-color);
 	}
 </style>
-
-<script>
-	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		document.body.classList.add('dark-mode');
-	}
-</script>

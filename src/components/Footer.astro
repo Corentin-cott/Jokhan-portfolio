@@ -7,18 +7,18 @@ import background from '../assets/placeholder.webp';
     <div class="header">
         <img src={background.src} alt="Background" class="background" loading="lazy" />
         <div class="content">
-            <h1 class="header-title">TITRE DU SITE</h1>
-            <p>Titre titre, titre titre, titre titre, titre titre</p>
+            <h1 class="header-title">2025  Jokhan Production</h1>
+            <p>Contenu par Ethan Ledoux / Site par Corentin Cottereau</p>
         </div>
     </div>
 </footer>
-<div class="navigation-menu">
+<!--<div class="navigation-menu">
     <nav style="transform: translateY(-550%); z-index: 2;">
         <a href="/" class="button">ACCUEIL</a>
         <a href="/catalogue" class="button">MES FILMS</a>
         <a href="/contact" class="button">CONTACT</a>
     </nav>
-</div>
+</div> -->
 
 <style>
     footer {
@@ -37,11 +37,20 @@ import background from '../assets/placeholder.webp';
         height: 100%;
         object-fit: cover;
         filter: brightness(var(--imageAlpha));
+        z-index: -1;
+    }
+
+    footer .content {
+        color: white;
     }
 
     footer .content .header-title {
         margin: 0;
-        font-size: 2em;
+        font-size: 1em;
+    }
+
+    footer .content p {
+        font-size: 0.8em;
     }
 
     .navigation-menu {  

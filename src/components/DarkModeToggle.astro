@@ -1,0 +1,59 @@
+<button id="darkModeToggle" aria-label="Activer/désactiver le mode sombre">
+  🌓
+</button>
+
+<style>
+  #darkModeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 0.75rem;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: transform .2s;
+  }
+
+  #darkModeToggle:hover {
+    transform: scale(1.2);
+  }
+
+    @media (max-width: 768px) {
+        #darkModeToggle {
+            position: fixed;
+            top: auto;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            z-index: 1000;
+            padding: 0.5rem 0.5rem;
+            font-size: 1rem;
+            transition: transform .1s;
+        }
+
+        #darkModeToggle:hover {
+            transform: scale(1.1);
+        }
+    }
+</style>
+
+<script is:inline>
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.body.classList.add('dark-mode');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('darkModeToggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem(
+        'theme',
+        document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+      );
+    });
+  });
+</script>
