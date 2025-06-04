@@ -31,4 +31,5 @@ Le site n'utilise pas encore de base de données.
 ## Contributions
 
 [Corentin COTTEREAU](https://github.com/Corentin-cott) (Développement du site)
+<br>
 [Ethan LEDOUX](https://perdu.com) (DA, Assets : Photo, films, ect...)
