@@ -1,77 +1,97 @@
 ---
 import '../styles/variables.css';
-const { numberToShow = 6 } = Astro.props;
 
 // Simule une base de données
-const filmList = [
+const displayedFilms = [
   {
-    title: "Film 1",
-    thumbnail: "https://img.youtube.com/vi/rYoZgpAEkFs/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/rYoZgpAEkFs",
+    title: "SUPERBOY et KRYPTO",
+    thumbnail: "https://citygem.app/wp-content/uploads/2024/08/placeholder-1-1.png",
+    videoId: "1luZifrCK_0Kd16O17JfdZ9a8tXbDyyGz",
   },
   {
-    title: "Film 2",
-    thumbnail: "https://img.youtube.com/vi/ysz5S6PUM-U/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/ysz5S6PUM-U",
+    title: "JURRASSIC BAD CUITE",
+    thumbnail: "",
+    videoId: "1EnP9G0_2ozvCjkFsuS0dSOWouZVZnD3t",
   },
   {
-    title: "Film 3",
-    thumbnail: "https://img.youtube.com/vi/eOrNdBpGMv8/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/eOrNdBpGMv8",
+    title: "JOKER FOLIE À DEUX",
+    thumbnail: "",
+    videoId: "",
   },
   {
-    title: "Film 4",
-    thumbnail: "https://img.youtube.com/vi/TcMBFSGVi1c/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/TcMBFSGVi1c",
+    title: "Dragon ball Z : Le pouvoir maudit",
+    thumbnail: "",
+    videoId: "1FGiiWx7pDoGsQ2WvQGwsuQfqUL4qIeBQ",
   },
   {
-    title: "Film 5",
-    thumbnail: "https://img.youtube.com/vi/U9BwWKXjVaI/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/U9BwWKXjVaI",
+    title: "MAD MAX : Les origines de l'apocalypse",
+    thumbnail: "",
+    videoId: "1kY2UkHVUMzFL_fzvXEDUF7DDx_WKPxYd",
   },
   {
-    title: "Film 6",
-    thumbnail: "https://img.youtube.com/vi/l3vVQrFA4J0/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/l3vVQrFA4J0",
+    title: "DEADPOOL & WOLVERINE : Balade dans le multivers PARTIE2",
+    thumbnail: "",
+    videoId: "1BObIUADrcpjiJfymw9yTgnt1dmeM7lPm",
   },
   {
-    title: "Film 7",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "DEADPOOL & WOLVERINE : Balade dans le multivers",
+    thumbnail: "",
+    videoId: "1WuV2hyPY38y8SwrgifyVTOwFOBxWIPUz",
+  },
+  {
+    title: "HUNT : La forêt maudite",
+    thumbnail: "",
+    videoId: "19ZtmQmIQrA92SrVhCihjXw6TsKUQq50d",
+  },
+  {
+    title: "CRIMINAL SANITY 3 : THE KILLER",
+    thumbnail: "",
+    videoId: "1hiSQeja1z9f0ujlOng3BTP4P5niQEm0E",
+  },
+  {
+    title: "CRIMINAL SANITY 2 : JOKER vs BATMAN",
+    thumbnail: "",
+    videoId: "1FIcHfQpyOc4BTfDceR26_B3PvKT4tbBN",
+  },
+  {
+    title: "CRIMINAL SANITY : JOKER vs HARLEY",
+    thumbnail: "",
+    videoId: "1hLe3WfmFBNP2ZSEsW3MRDRgsL4IxUW5e",
   },
 ];
-
-// On coupe la liste selon la variable passée
-const displayedFilms = filmList.slice(0, numberToShow);
 ---
 
 <section class="film-catalog">
   <h2>Catalogue de Films</h2>
   <div class="recherche-container">
-    <form class="recherche-form">
+    <form class="recherche-form" id="search-form">
       <input
-        type="text"
-        placeholder="Rechercher un film..."
-        class="recherche-input"
-        aria-label="Rechercher un film"
+          type="text"
+          placeholder="Rechercher un film..."
+          class="recherche-input"
+          aria-label="Rechercher un film"
+          id="search-input"
       />
       <button type="submit" class="recherche-button">Rechercher</button>
+    </form>
   </div>
-  <div class="film-grid">
+  <div class="film-grid" id="film-grid">
     {displayedFilms.map(film => (
-      <div class="film-card">
-        <div class="video-thumbnail">
-          <iframe
-            src={film.videoUrl}
-            title={film.title}
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+        <div class="film-card" data-title={film.title.toLowerCase()}>
+          <div class="video-thumbnail">
+            {film.videoId
+                ? <iframe
+                    src={`https://drive.google.com/file/d/${film.videoId}/preview`}
+                    title={film.title}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+                : <img src={film.thumbnail || "https://citygem.app/wp-content/uploads/2024/08/placeholder-1-1.png"} alt={film.title} />}
+          </div>
+          <h3>{film.title}</h3>
         </div>
-        <h3>{film.title}</h3>
-      </div>
     ))}
   </div>
 </section>
@@ -181,3 +201,23 @@ const displayedFilms = filmList.slice(0, numberToShow);
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("search-input") as HTMLInputElement | null;
+    const form = document.getElementById("search-form") as HTMLFormElement | null;
+    const films = document.querySelectorAll<HTMLElement>(".film-card");
+
+    if (!input || !form) return;
+
+    form.addEventListener("submit", (e) => e.preventDefault());
+
+    input.addEventListener("input", () => {
+      const query = input.value.toLowerCase().trim();
+      films.forEach((card) => {
+        const title = card.getAttribute("data-title") || "";
+        card.style.display = title.includes(query) ? "block" : "none";
+      });
+    });
+  });
+</script>

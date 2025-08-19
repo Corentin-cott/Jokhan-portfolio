@@ -1,10 +1,16 @@
 ---
 import '../styles/variables.css';
+
+const image_id = "1u-RliJbaFbDFz-UC6Nbvd5yxb4Ecd6tu"; // remplace par ton vrai ID Google Drive
 ---
 
 <header>
     <div class="header">
-        <img src="https://cdn.discordapp.com/attachments/848953378574827520/1382053419958796421/1000033917.png?ex=6849c10c&is=68486f8c&hm=c060c34206cf0927a8c8975fe74aa80d2c067408d37e5e6a5910e435b4a16bf3&" alt="Background" class="background" />
+        <img
+                src={`https://drive.google.com/thumbnail?id=${image_id}&sz=w1800`}
+                alt="Background"
+                class="background"
+        />
         <div class="content">
             <h1 class="header-title">ETHAN LEDOUX</h1>
             <p>JOKHAN FILM PRODUCTION</p>
@@ -22,11 +28,16 @@ import '../styles/variables.css';
 <style>
     header {
         position: relative;
-        padding: 100px 10px;
+        padding: 0 10px;
         text-align: center;
         color: var(--light-inerted-background-color);
         z-index: 0;
-        height: 300px;
+        height: 500px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     
     header .background {
@@ -42,7 +53,13 @@ import '../styles/variables.css';
 
     header .content .header-title {
         margin: 0;
-        font-size: 2em;
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    header .content p {
+        margin: 10px 0 0;
+        font-size: 1.3em;
     }
 
     .navigation-menu {  
