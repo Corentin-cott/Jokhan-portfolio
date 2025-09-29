@@ -1,15 +1,19 @@
 ---
 import '../styles/variables.css';
+import { Image } from 'astro:assets';
 
-const image_id = "1u-RliJbaFbDFz-UC6Nbvd5yxb4Ecd6tu"; // remplace par ton vrai ID Google Drive
+const image_id = "1I3O9r6ERoMdwJbztHJYvXhPuykALf87A";
 ---
 
 <header>
     <div class="header">
-        <img
+        <Image
                 src={`https://drive.google.com/thumbnail?id=${image_id}&sz=w1800`}
                 alt="Background"
                 class="background"
+                height={1}
+                width={1}
+                loading="eager"
         />
         <div class="content">
             <h1 class="header-title">ETHAN LEDOUX</h1>
