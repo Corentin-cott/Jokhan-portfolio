@@ -24,9 +24,7 @@
     --light-link-hover-color: var(--lightmode-link-hover-color);
     --light-ig-color: var(--lightmode-ig-color);
     --light-ytb-color: var(--lightmode-ytb-color);
-    --light-l3-color: var(--lightmode-l3-color);
-    --light-l4-color: var(--lightmode-l4-color);
-    --light-l5-color: var(--lightmode-l5-color);
+    --light-tiktok-color: var(--lightmode-tiktok-color);
 
     --light-singleCatalogueColor: var(--lightmode-singleCatalogueColor);
     --light-singleCatalogueBackgroundColor: var(--lightmode-singleCatalogueBackgroundColor);
@@ -55,9 +53,7 @@
     --lightmode-link-hover-color: #ff0000;
     --lightmode-ig-color: #c13584;
     --lightmode-ytb-color: #bb0000;
-    --lightmode-l3-color: #3d3a33;
-    --lightmode-l4-color: #0077b5;
-    --lightmode-l5-color: #06aa45;
+    --lightmode-tiktok-color: #397684;
 
     --lightmode-singleCatalogueColor: #333;
     --lightmode-singleCatalogueBackgroundColor: #fff;
@@ -86,9 +82,7 @@
     --darkmode-link-hover-color: #ff0000;
     --darkmode-ig-color: #c13584;
     --darkmode-ytb-color: #bb0000;
-    --darkmode-l3-color: #c98900;
-    --darkmode-l4-color: #0077b5;
-    --darkmode-l5-color: #06aa45;
+    --darkmode-tiktok-color: #2af0ea;
 
     --darkmode-singleCatalogueColor: #d8d8d8;
     --darkmode-singleCatalogueBackgroundColor: #000000;
@@ -119,9 +113,7 @@ body.dark-mode {
     --light-link-hover-color: var(--darkmode-link-hover-color);
     --light-ig-color: var(--darkmode-ig-color);
     --light-ytb-color: var(--darkmode-ytb-color);
-    --light-l3-color: var(--darkmode-l3-color);
-    --light-l4-color: var(--darkmode-l4-color);
-    --light-l5-color: var(--darkmode-l5-color);
+    --light-tiktok-color: var(--darkmode-tiktok-color);
 
     --light-singleCatalogueColor: var(--darkmode-singleCatalogueColor);
     --light-singleCatalogueBackgroundColor: var(--darkmode-singleCatalogueBackgroundColor);

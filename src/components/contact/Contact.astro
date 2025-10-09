@@ -1,0 +1,136 @@
+---
+import '../../styles/variables.css';
+---
+
+<section class="contact-section">
+    <h2>Mes réseaux / Prendre contact</h2>
+
+    <div class="button_links_container" style="display: block">
+
+        <div class="button_item row-left">
+            <p class="button_text">
+                C'est sur <strong>Instagram</strong> que j'ai commencé à réaliser des mini-métrages en format vertical <em>(Reels)</em> il y a 4 ans, puis progressivement des <strong>courts-métrages</strong> plus complets.
+                Aujourd'hui, j'y fais la <strong>promotion de mes films</strong> via stories, <em>Reels</em> et publications <em>(affiches, bandes-annonces, photos de tournage)</em>.
+                J’y partage également du <strong>contenu privé</strong>, car c’est la <strong>plateforme où je suis le plus actif</strong>.
+            </p>
+            <a class="button_link link_ig" href="">
+                <span>Instagram</span>
+            </a>
+        </div>
+
+        <div class="button_item row-right">
+            <p class="button_text">
+                C'est sur <strong>YouTube</strong> que l'on peut retrouver <strong>tous mes films en intégralité</strong>, ainsi que les <strong>bandes-annonces</strong> et les <em>shorts</em> présentant les <strong>actualités et informations</strong> concernant mes projets.
+            </p>
+            <a class="button_link link_ytb" href="">
+                <span>YouTube</span>
+            </a>
+        </div>
+
+        <div class="button_item row-left">
+            <p class="button_text">
+                Sur <strong>TikTok</strong>, on y trouve du <strong>contenu privé et cinématographique</strong>, incluant <em>photos</em>, <em>bandes-annonces</em> et <em>affiches</em> de mes films.
+            </p>
+            <a class="button_link link_tiktok" href="">
+                <span>TikTok</span>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    .button_links_container {
+        gap: 20px;
+    }
+
+    .button_item {
+        display: flex;
+        align-items: center; /* centre verticalement */
+        gap: 15px;
+    }
+
+    /* Alternance gauche/droite */
+    .row-left {
+        flex-direction: row;
+        justify-content: flex-start; /* texte à gauche, bouton à droite */
+    }
+
+    .row-right {
+        flex-direction: row-reverse;
+        justify-content: flex-start; /* bouton à gauche, texte à droite */
+    }
+
+    .button_text {
+        flex: 1;
+        color: var(--light-contrast-over-background-large);
+        font-size: 1rem;
+    }
+
+    .contact-section {
+        padding: 20px;
+        border-radius: 8px;
+        max-width: var(--maxWidth);
+        margin: 20px auto;
+    }
+
+    .contact-section h2 {
+        color: var(--light-contrast-over-background-large);
+    }
+
+    .contact-section p {
+        line-height: 1.6;
+        color: var(--light-contrast-over-background-large);
+    }
+
+    .contact-section .button_links_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .button_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--light-background-color);
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        max-width: 15em;
+        width: 100%;
+        font-weight: 600;
+    }
+
+    .button_link svg {
+        margin-right: 10px;
+        fill: var(--light-background-color);
+    }
+
+    /* Instagram */
+    .link_ig { background: var(--light-ig-color); border: 1px solid var(--light-ig-color); }
+    .link_ig:hover { background: var(--light-background-color); color: var(--light-ig-color); }
+    .link_ig:hover svg { fill: var(--light-ig-color); }
+
+    /* YouTube */
+    .link_ytb { background: var(--light-ytb-color); border: 1px solid var(--light-ytb-color); }
+    .link_ytb:hover { background: var(--light-background-color); color: var(--light-ytb-color); }
+    .link_ytb:hover svg { fill: var(--light-ytb-color); }
+
+    /* Tiktok */
+    .link_tiktok { background: var(--light-tiktok-color); border: 1px solid var(--light-tiktok-color); }
+    .link_tiktok:hover { background: var(--light-background-color); color: var(--light-tiktok-color); }
+    .link_tiktok:hover svg { fill: var(--light-tiktok-color); }
+
+    @media (max-width: 768px) {
+        .contact-section {
+            padding: 20px;
+            padding-top: 40px;
+            padding-bottom: 0px;
+        }
+    }
+</style>
