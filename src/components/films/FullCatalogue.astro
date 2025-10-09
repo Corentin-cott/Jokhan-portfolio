@@ -23,15 +23,15 @@ import { displayedFilms } from "../../model.ts";
     {displayedFilms.map(film => (
         <div class="film-card" data-title={film.titre.toLowerCase()}>
           <div class="video-thumbnail">
-            {film.videoUrl
-                ? <iframe
-                    src={ formatVideoUrlByUrl(film.videoUrl) }
-                    title={film.titre}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    loading="lazy"
-                ></iframe>
-                : <img src={film.thumbnailUrl || "https://citygem.app/wp-content/uploads/2024/08/placeholder-1-1.png"} alt={film.titre} />}
+              {film.videoUrl && (
+                  <iframe
+                      src={formatVideoUrlByUrl(film.videoUrl)}
+                      title={film.titre}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      loading="lazy"
+                  ></iframe>
+              )}
           </div>
           <h3>{film.titre}</h3>
         </div>
