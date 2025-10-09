@@ -5,6 +5,13 @@ import Aboutme from '../components/index/Aboutme.astro';
 import SingleFilmSection from '../components/films/SingleFilmSection.astro';
 import PlaceholderImage from '../assets/placeholder.webp';
 
+import { displayedFilms } from "../model.ts";
+import {formatAfficheUrlByAfficheUrl, formatVideoUrlByUrl} from "../utils/googleDriveUrlFormatter.ts";
+const selectedFilmIds = [4, 1, 3, 6];
+const selectedFilms = selectedFilmIds.map(id =>
+    displayedFilms.find(film => film.id === id)!
+);
+
 const singleCatalogueTextColor = 'var(--light-singleCatalogueColor)';
 const singleCatalogueBackgroundColor = 'var(--light-singleCatalogueBackgroundColor)';
 const singleCatalogueBorderColor = 'var(--light-singleCatalogueBorderColor)';
@@ -15,52 +22,18 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 
 <Layout>
 	<Aboutme />
-	<SingleFilmSection
-		title="JOKER FOLIE À DEUX"
-        afficheId="1U2_-ZYT8zCcIhzu3E9MGRcd2dyQXwZaU"
-		description1='Ce film est une reprise du film "JOKER FOLIE À DEUX", mon plus grand projet et mon meilleur travail d’acteur. Grâce à l’accord du maire, j’ai pu projeter le film au cinéma de Saint-Genis-de-Saintonge, le 17 mai à 10h. J’ai ainsi réalisé le rêve de ma vie.'
-		description2="SCÉNARIO : Deux ans après le premier volet, Arthur Fleck est interné à Arkham. Déchiré entre ses deux personnalités, il rencontre Harley, une fan obsédée. Leur amour les entraîne dans une folie partagée, faite de crimes et de musique. Que vous ayez aimé ou non le film original, vous découvrirez une nouvelle vision. Bon visionnage."
-		videoId="1upnx9Q5-BIJw7gpAVuh0NTrP_GutJCef"
-		assetsLoad="eager"
-		filmSide="right"
-		backgroundColor={altSingleCatalogueBackgroundColor}
-		textColor={altSingleCatalogueTextColor}
-		borderColor={altSingleCatalogueBorderColor}
-	/>
-	<SingleFilmSection
-		title="SUPERBOY et KRYPTO"
-        afficheId={PlaceholderImage.src}
-		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
-		description2="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-		videoId="1luZifrCK_0Kd16O17JfdZ9a8tXbDyyGz"
-		assetsLoad="lazy"
-		filmSide="left"
-		backgroundColor={singleCatalogueBackgroundColor}
-		textColor={singleCatalogueTextColor}
-		borderColor={singleCatalogueBorderColor}
-	/>
-	<SingleFilmSection
-		title="JURRASSIC BAD CUITE"
-        afficheId={PlaceholderImage.src}
-		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis."
-		description2="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
-		videoId="1EnP9G0_2ozvCjkFsuS0dSOWouZVZnD3t"
-		assetsLoad="lazy"
-		filmSide="right"
-		backgroundColor={altSingleCatalogueBackgroundColor}
-		textColor={altSingleCatalogueTextColor}
-		borderColor={altSingleCatalogueBorderColor}
-	/>
-	<SingleFilmSection
-		title="MAD MAX : Les origines de l'apocalypse"
-        afficheId={PlaceholderImage.src}
-		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis."
-		description2="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
-		videoId="1kY2UkHVUMzFL_fzvXEDUF7DDx_WKPxYd"
-		assetsLoad="lazy"
-		filmSide="left"
-		backgroundColor={singleCatalogueBackgroundColor}
-		textColor={singleCatalogueTextColor}
-		borderColor={singleCatalogueBorderColor}
-	/>
+    {selectedFilms.map((film, index) => (
+            <SingleFilmSection
+                    title={film.titre}
+                    afficheId={ formatAfficheUrlByAfficheUrl(film.afficheUrl) || PlaceholderImage.src}
+                    description1={film.description || "Aucune description disponible."}
+                    description2=""
+                    videoId={ formatVideoUrlByUrl(film.videoUrl) }
+                    assetsLoad={index === 0 ? "eager" : "lazy"}
+                    filmSide={index % 2 === 0 ? "right" : "left"}
+                    backgroundColor={index % 2 === 0 ? altSingleCatalogueBackgroundColor : singleCatalogueBackgroundColor}
+                    textColor={index % 2 === 0 ? altSingleCatalogueTextColor : singleCatalogueTextColor}
+                    borderColor={index % 2 === 0 ? altSingleCatalogueBorderColor : singleCatalogueBorderColor}
+            />
+    ))}
 </Layout>
