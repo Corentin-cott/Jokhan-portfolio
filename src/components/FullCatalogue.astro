@@ -1,74 +1,8 @@
 ---
 import '../styles/variables.css';
+import { formatVideoUrlByUrl } from "../utils/googleDriveUrlFormatter.ts";
+import { displayedFilms } from "../model.ts";
 
-// Simule une base de données
-const displayedFilms = [
-  {
-    title: "DRACULA - SORTIE LE 31/10/2025",
-    thumbnail: "",
-    videoId: "",
-    videoIdNotReleased: "180qpbv_1YzHYZERscoakgUDTc77UVfVj",
-    hd: true
-  },
-  {
-    title: "SUPERBOY et KRYPTO",
-    thumbnail: "https://citygem.app/wp-content/uploads/2024/08/placeholder-1-1.png",
-    videoId: "1VtlSsidkqM0eYbzhIStSAGE1rXkmYC2I",
-    hd: true
-  },
-  {
-    title: "JURRASSIC BAD CUITE",
-    thumbnail: "",
-    videoId: "1vn6HcSV36VrUOm9tfauI047PBZb3WKMQ",
-    hd: true
-  },
-  {
-    title: "JOKER FOLIE À DEUX",
-    thumbnail: "",
-    videoId: "1upnx9Q5-BIJw7gpAVuh0NTrP_GutJCef",
-    hd: true
-  },
-  {
-    title: "Dragon ball Z : Le pouvoir maudit",
-    thumbnail: "",
-    videoId: "1FGiiWx7pDoGsQ2WvQGwsuQfqUL4qIeBQ",
-  },
-  {
-    title: "MAD MAX : Les origines de l'apocalypse",
-    thumbnail: "",
-    videoId: "1kY2UkHVUMzFL_fzvXEDUF7DDx_WKPxYd",
-  },
-  {
-    title: "DEADPOOL & WOLVERINE : Balade dans le multivers PARTIE2",
-    thumbnail: "",
-    videoId: "1BObIUADrcpjiJfymw9yTgnt1dmeM7lPm",
-  },
-  {
-    title: "DEADPOOL & WOLVERINE : Balade dans le multivers",
-    thumbnail: "",
-    videoId: "1WuV2hyPY38y8SwrgifyVTOwFOBxWIPUz",
-  },
-  {
-    title: "HUNT : La forêt maudite",
-    thumbnail: "",
-    videoId: "19ZtmQmIQrA92SrVhCihjXw6TsKUQq50d",
-  },
-  {
-    title: "CRIMINAL SANITY 3 : THE KILLER",
-    thumbnail: "",
-    videoId: "1hiSQeja1z9f0ujlOng3BTP4P5niQEm0E",
-  },
-  {
-    title: "CRIMINAL SANITY 2 : JOKER vs BATMAN",
-    thumbnail: "",
-    videoId: "1FIcHfQpyOc4BTfDceR26_B3PvKT4tbBN",
-  },
-  {
-    title: "CRIMINAL SANITY : JOKER vs HARLEY",
-    thumbnail: "",
-    videoId: "1hLe3WfmFBNP2ZSEsW3MRDRgsL4IxUW5e",
-  },
-];
 ---
 
 <section class="film-catalog">
@@ -87,20 +21,19 @@ const displayedFilms = [
   </div>
   <div class="film-grid" id="film-grid">
     {displayedFilms.map(film => (
-        <div class="film-card" data-title={film.title.toLowerCase()}>
+        <div class="film-card" data-title={film.titre.toLowerCase()}>
           <div class="video-thumbnail">
-            {film.videoId
+            {film.videoUrl
                 ? <iframe
-                    src={`https://drive.google.com/file/d/${film.videoId}/preview`}
-                    title={film.title}
-                    frameborder="0"
+                    src={ formatVideoUrlByUrl(film.videoUrl) }
+                    title={film.titre}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                     loading="lazy"
                 ></iframe>
-                : <img src={film.thumbnail || "https://citygem.app/wp-content/uploads/2024/08/placeholder-1-1.png"} alt={film.title} />}
+                : <img src={film.thumbnailUrl || "https://citygem.app/wp-content/uploads/2024/08/placeholder-1-1.png"} alt={film.titre} />}
           </div>
-          <h3>{film.title}</h3>
+          <h3>{film.titre}</h3>
         </div>
     ))}
   </div>
