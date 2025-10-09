@@ -1,0 +1,52 @@
+---
+import '../../styles/variables.css';
+---
+
+<section class="about-section">
+    <h2>Le top ne te suffit pas ?</h2>
+    <a href="/catalogue" class="button_link link_ytb">VOIR LA LISTE COMPLETE DES FILMS</a>
+</section>
+
+
+<style>
+    .about-section {
+        padding: 20px;
+        border-radius: 8px;
+        max-width: var(--maxWidth);
+        margin: 20px auto;
+    }
+
+    .about-section h2 {
+        color: var(--light-contrast-over-background-large);
+    }
+
+    .about-section p {
+        line-height: 1.6;
+        color: var(--light-contrast-over-background-large);
+    }
+
+    .button_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .link_ytb { background: var(--light-ytb-color); border: 1px solid var(--light-ytb-color); }
+    .link_ytb:hover { background: var(--light-background-color); color: var(--light-ytb-color); }
+    .link_ytb:hover svg { fill: var(--light-ytb-color); }
+
+    @media (max-width: 768px) {
+        .about-section {
+            padding: 20px;
+            padding-top: 40px;
+            padding-bottom: 0px;
+        }
+    }
+</style>

@@ -3,7 +3,7 @@ export function formatVideoUrlByUrl(url: string): string {
     const videoId = match ? match[1] : '';
 
     const formattedVideoUrl: string = formatVideoUrlByVideoId(videoId);
-    console.log("OG VIDEO URL : " + url + "\nCONVERTED TO : " + formattedVideoUrl);
+    console.log("\nOG VIDEO URL : " + url + "\nVIDEO URL CONVERTED TO : " + formattedVideoUrl);
     return formattedVideoUrl;
 }
 
@@ -16,7 +16,7 @@ export function formatAfficheUrlByAfficheUrl(url: string): string {
     const afficheId = match ? match[1] : '';
 
     const formattedAfficheUrl: string = formatAfficheUrlByAfficheId(afficheId);
-    console.log("OG AFFICHE URL : " + url + "\nCONVERTED TO : " + formattedAfficheUrl);
+    console.log("\nOG AFFICHE URL : " + url + "\nAFFICHE URL CONVERTED TO : " + formattedAfficheUrl);
     return formattedAfficheUrl;
 }
 

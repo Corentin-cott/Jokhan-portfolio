@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/variables.css';
 import Aboutme from '../components/index/Aboutme.astro';
+import VoirPlus from '../components/index/VoirPlus.astro';
 import SingleFilmSection from '../components/films/SingleFilmSection.astro';
 import PlaceholderImage from '../assets/placeholder.webp';
 
@@ -24,11 +25,10 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 	<Aboutme />
     {selectedFilms.map((film, index) => (
             <SingleFilmSection
-                    title={film.titre}
-                    afficheId={ formatAfficheUrlByAfficheUrl(film.afficheUrl) || PlaceholderImage.src}
-                    description1={film.description || "Aucune description disponible."}
-                    description2=""
-                    videoId={ formatVideoUrlByUrl(film.videoUrl) }
+                    title={ film.titre || "Aucun titre."}
+                    afficheUrl={ formatAfficheUrlByAfficheUrl(film.afficheUrl) || PlaceholderImage.src}
+                    description={ film.description || "Aucune description." }
+                    videoUrl={ formatVideoUrlByUrl(film.videoUrl) }
                     assetsLoad={index === 0 ? "eager" : "lazy"}
                     filmSide={index % 2 === 0 ? "right" : "left"}
                     backgroundColor={index % 2 === 0 ? altSingleCatalogueBackgroundColor : singleCatalogueBackgroundColor}
@@ -36,4 +36,5 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
                     borderColor={index % 2 === 0 ? altSingleCatalogueBorderColor : singleCatalogueBorderColor}
             />
     ))}
+    <VoirPlus />
 </Layout>

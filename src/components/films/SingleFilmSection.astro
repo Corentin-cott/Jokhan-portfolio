@@ -3,10 +3,9 @@ import '../../styles/variables.css';
 
 let {
   title,
-  afficheId,
-  description1,
-  description2,
-  videoId,
+  afficheUrl,
+  description,
+  videoUrl,
   assetsLoad,
   filmSide,
   backgroundColor,
@@ -29,38 +28,36 @@ const isVideoLeft = filmSide === "left";
             <iframe
               width="560"
               height="315"
-              src={"https://drive.google.com/file/d/"+videoId+"/preview"}
-              title="Video player"
+              src={ videoUrl }
               frameborder="0"
+              title="Video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
               loading={assetsLoad}
             />
           </div>
           <div class="description">
-            <p>{description1}</p>
-            <p>{description2}</p>
+            <p>{description}</p>
           </div>
           <div class="portrait-imagge">
-            <img src={"https://drive.google.com/thumbnail?id="+afficheId+"&sz=w1000"} loading={assetsLoad} alt="Portrait" />
+            <img src={ afficheUrl } loading={assetsLoad} alt="Portrait" />
           </div>
         </>
       ) : (
         <>
           <div class="portrait-imagge">
-            <img src={"https://drive.google.com/thumbnail?id="+afficheId+"&sz=w1000"} loading={assetsLoad} alt="Portrait" />
+            <img src={ afficheUrl } loading={assetsLoad} alt="Portrait" />
           </div>
           <div class="description">
-            <p>{description1}</p>
-            <p>{description2}</p>
+            <p>{description}</p>
           </div>
           <div class="embeded-video">
             <iframe
               width="560"
               height="315"
-              src={"https://drive.google.com/file/d/"+videoId+"/preview"}
-              title="Video player"
+              src={ videoUrl }
               frameborder="0"
+              title="Video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
               loading={assetsLoad}
