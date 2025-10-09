@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/variables.css';
 import Aboutme from '../components/index/Aboutme.astro';
 import VoirPlus from '../components/index/VoirPlus.astro';
-import SingleFilmSection from '../components/films/SingleFilmSection.astro';
+import SingleFilm from '../components/films/SingleFilm.astro';
 import PlaceholderImage from '../assets/placeholder.webp';
 
 import { displayedFilms } from "../model.ts";
@@ -24,11 +24,12 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 <Layout>
 	<Aboutme />
     {selectedFilms.map((film, index) => (
-            <SingleFilmSection
+            <SingleFilm
                     title={ film.titre || "Aucun titre."}
                     afficheUrl={ formatAfficheUrlByAfficheUrl(film.afficheUrl) || PlaceholderImage.src}
                     description={ film.description || "Aucune description." }
                     videoUrl={ formatVideoUrlByUrl(film.videoUrl) }
+                    dateDeSortie={ film.dateDeSortie }
                     assetsLoad={index === 0 ? "eager" : "lazy"}
                     filmSide={index % 2 === 0 ? "right" : "left"}
                     backgroundColor={index % 2 === 0 ? altSingleCatalogueBackgroundColor : singleCatalogueBackgroundColor}

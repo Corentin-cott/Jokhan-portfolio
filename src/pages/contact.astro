@@ -1,8 +1,35 @@
 ---
-import Contact from '../components/contact/Contact.astro';
 import Layout from '../layouts/Layout.astro';
+import '../styles/variables.css';
+import ContactComponent from '../components/contact/Contact.astro';
+import SingleFilm from '../components/films/SingleFilm.astro';
+import {formatAfficheUrlByAfficheUrl, formatVideoUrlByUrl} from "../utils/googleDriveUrlFormatter.ts";
+
+import { displayedReviewVideo } from "../model.ts";
+
+const singleCatalogueTextColor = 'var(--light-singleCatalogueColor)';
+const singleCatalogueBackgroundColor = 'var(--light-singleCatalogueBackgroundColor)';
+const singleCatalogueBorderColor = 'var(--light-singleCatalogueBorderColor)';
+const altSingleCatalogueTextColor = 'var(--light-alt-singleCatalogueColor)';
+const altSingleCatalogueBackgroundColor = 'var(--light-alt-singleCatalogueBackgroundColor)';
+const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColor)';
 ---
 
 <Layout>
-    <Contact />
+    <ContactComponent />
+    {displayedReviewVideo.map((film, index) => (
+            <SingleFilm
+                    title={ film.titre || "Aucun titre."}
+                    afficheUrl={ formatAfficheUrlByAfficheUrl(film.afficheUrl)}
+                    description={ film.description || "Aucune description." }
+                    videoUrl={ formatVideoUrlByUrl(film.videoUrl) }
+                    dateDeSortie={ film.dateDeSortie }
+                    assetsLoad={index === 0 ? "eager" : "lazy"}
+                    filmSide={index % 2 === 0 ? "right" : "left"}
+                    backgroundColor={index % 2 === 0 ? altSingleCatalogueBackgroundColor : singleCatalogueBackgroundColor}
+                    textColor={index % 2 === 0 ? altSingleCatalogueTextColor : singleCatalogueTextColor}
+                    borderColor={index % 2 === 0 ? altSingleCatalogueBorderColor : singleCatalogueBorderColor}
+            />
+    ))}
+    <br><br><br><br>
 </Layout>

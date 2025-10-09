@@ -6,6 +6,7 @@ let {
   afficheUrl,
   description,
   videoUrl,
+  dateDeSortie,
   assetsLoad,
   filmSide,
   backgroundColor,
@@ -13,6 +14,10 @@ let {
   borderColor,
 } = Astro.props;
 const isVideoLeft = filmSide === "left";
+
+if (dateDeSortie && new Date(dateDeSortie) > new Date()) {
+    videoUrl = "";
+}
 ---
 
 <section
@@ -25,43 +30,63 @@ const isVideoLeft = filmSide === "left";
       isVideoLeft ? (
         <>
           <div class="embeded-video">
-            <iframe
-              width="560"
-              height="315"
-              src={ videoUrl }
-              frameborder="0"
-              title="Video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading={assetsLoad}
-            />
+              {videoUrl && videoUrl !== "" ? (
+                      <iframe
+                              width="560"
+                              height="315"
+                              src={videoUrl}
+                              frameborder="0"
+                              title="Video player"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading={assetsLoad}
+                      />
+              ) : (
+                      <img
+                              src="https://www.corenov.ca/wp-content/uploads/2020/09/a-venir.jpg"
+                              style="width: 100%; height: auto; max-height: 315px; border-radius: 1em"
+                              alt="À venir"
+                      />
+              )}
           </div>
           <div class="description">
             <p>{description}</p>
           </div>
-          <div class="portrait-imagge">
-            <img src={ afficheUrl } loading={assetsLoad} alt="Portrait" />
-          </div>
+            {afficheUrl && afficheUrl !== "" && (
+                    <div class="portrait-imagge">
+                        <img src={afficheUrl} loading={assetsLoad} alt="Portrait" />
+                    </div>
+            )}
         </>
       ) : (
         <>
-          <div class="portrait-imagge">
-            <img src={ afficheUrl } loading={assetsLoad} alt="Portrait" />
-          </div>
+            {afficheUrl && afficheUrl !== "" && (
+                    <div class="portrait-imagge">
+                        <img src={afficheUrl} loading={assetsLoad} alt="Portrait" />
+                    </div>
+            )}
           <div class="description">
             <p>{description}</p>
           </div>
           <div class="embeded-video">
-            <iframe
-              width="560"
-              height="315"
-              src={ videoUrl }
-              frameborder="0"
-              title="Video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading={assetsLoad}
-            />
+              {videoUrl && videoUrl !== "" ? (
+                      <iframe
+                              width="560"
+                              height="315"
+                              src={videoUrl}
+                              frameborder="0"
+                              title="Video player"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading={assetsLoad}
+                      />
+              ) : (
+                      <img
+                              src="https://www.corenov.ca/wp-content/uploads/2020/09/a-venir.jpg"
+                              style="width: 100%; height: auto; max-height: 315px; border-radius: 1em"
+                              alt="À venir"
+                      />
+              )}
           </div>
         </>
       )
@@ -108,6 +133,7 @@ const isVideoLeft = filmSide === "left";
 
   .section-film .content-columns .description p {
     margin-top: 0;
+    white-space: pre-line;
   }
 
   .section-film .content-columns .embeded-video {
