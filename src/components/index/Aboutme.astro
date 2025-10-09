@@ -1,12 +1,12 @@
 ---
-import '../styles/variables.css';
+import '../../styles/variables.css';
 ---
 
 <section class="about-section">
     <h2>Qui suis-je&nbsp;?</h2>
     <p>
         Bonjour et bienvenue sur mon site internet. Je m'appelle <strong>Ethan Ledoux</strong> et je réalise des courts-métrages, dont un long-métrage filmé et diffusé au cinéma de ma ville
-        (<a href="https://saintgenis17.fr/salle-jeanne-darc-st-genis-de-saintonge/" target="_blank">Salle Jeanne d'Arc, Saint-Genis-de-Saintonge</a>) :
+        (<a class="aboutmelink" href="https://saintgenis17.fr/salle-jeanne-darc-st-genis-de-saintonge/" target="_blank">Salle Jeanne d'Arc, Saint-Genis-de-Saintonge</a>) :
         <em>Fan film JOKER FOLIE À DEUX</em>.
     </p>
     <p>
@@ -38,6 +38,14 @@ import '../styles/variables.css';
     .about-section p {
         line-height: 1.6;
         color: var(--light-contrast-over-background-large);
+    }
+
+    .aboutmelink {
+        color: red;
+    }
+
+    .aboutmelink:hover {
+        color: darkred;
     }
     
     @media (max-width: 768px) {

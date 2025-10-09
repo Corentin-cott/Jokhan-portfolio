@@ -1,8 +1,8 @@
 ---
-import '../styles/variables.css';
-import Aboutme from '../components/AboutmeSection.astro';
-import FilmSection from '../components/SingleFilmSection.astro';
 import Layout from '../layouts/Layout.astro';
+import '../styles/variables.css';
+import Aboutme from '../components/index/Aboutme.astro';
+import SingleFilmSection from '../components/films/SingleFilmSection.astro';
 import PlaceholderImage from '../assets/placeholder.webp';
 
 const singleCatalogueTextColor = 'var(--light-singleCatalogueColor)';
@@ -15,7 +15,7 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 
 <Layout>
 	<Aboutme />
-	<FilmSection
+	<SingleFilmSection
 		title="JOKER FOLIE À DEUX"
         afficheId="1U2_-ZYT8zCcIhzu3E9MGRcd2dyQXwZaU"
 		description1='Ce film est une reprise du film "JOKER FOLIE À DEUX", mon plus grand projet et mon meilleur travail d’acteur. Grâce à l’accord du maire, j’ai pu projeter le film au cinéma de Saint-Genis-de-Saintonge, le 17 mai à 10h. J’ai ainsi réalisé le rêve de ma vie.'
@@ -27,7 +27,7 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 		textColor={altSingleCatalogueTextColor}
 		borderColor={altSingleCatalogueBorderColor}
 	/>
-	<FilmSection
+	<SingleFilmSection
 		title="SUPERBOY et KRYPTO"
         afficheId={PlaceholderImage.src}
 		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
@@ -39,7 +39,7 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 		textColor={singleCatalogueTextColor}
 		borderColor={singleCatalogueBorderColor}
 	/>
-	<FilmSection
+	<SingleFilmSection
 		title="JURRASSIC BAD CUITE"
         afficheId={PlaceholderImage.src}
 		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis."
@@ -51,7 +51,7 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 		textColor={altSingleCatalogueTextColor}
 		borderColor={altSingleCatalogueBorderColor}
 	/>
-	<FilmSection
+	<SingleFilmSection
 		title="MAD MAX : Les origines de l'apocalypse"
         afficheId={PlaceholderImage.src}
 		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis."
