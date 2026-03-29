@@ -8,7 +8,7 @@ import PlaceholderImage from '../assets/placeholder.webp';
 
 import { displayedFilms } from "../model.ts";
 import {formatAfficheUrlByAfficheUrl, formatVideoUrlByUrl} from "../utils/googleDriveUrlFormatter.ts";
-const selectedFilmIds = [4, 1, 3, 6];
+const selectedFilmIds = [13, 4, 1, 3];
 const selectedFilms = selectedFilmIds.map(id =>
     displayedFilms.find(film => film.id === id)!
 );

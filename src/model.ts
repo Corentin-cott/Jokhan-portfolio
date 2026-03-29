@@ -12,8 +12,16 @@ export interface Film {
 // TODO : Remplacer par une bdd
 export const displayedFilms: Film[] = [
     {
+        id: 13,
+        titre: "JOKER 3 - SORTIE LE 11 AVRIL 2026",
+        description: "PRÊT POUR UNE DERNIÈRE FOLIE ?\nJOKER 3 : The Last Joke\n\n2 ans après les événements de \"folie à deux\". Le chaos règne dans Gotham, causé par le nouveau Joker, malgré les efforts du chevalier noir et du Maire Harvey Dent.\n\nArthur Fleck vit paisiblement avec sa fille Robin reculé de la ville, jusqu'à une soirée tragique, qui poussera celui-ci a redevenir Joker pour une dernière danse sanglante.",
+        afficheUrl: "https://drive.google.com/file/d/1LXKOD712kh2ebPe0KTCBoHutCPKEX7aa/view?usp=drive_link",
+        videoUrl: "https://drive.google.com/file/d/1hGIjcD-TgpEyDXuYcZT4GnFvm8utk5pv/view?usp=drive_link",
+        dateDeSortie: new Date("2026-04-11"),
+    },
+    {
         id: 1,
-        titre: "DRACULA - SORTIE LE 30 OCTOBRE 2025",
+        titre: "DRACULA",
         description: "Ce fan film met en scène Van Helsing, chasseur de monstres, qui raconte l’histoire de son ami parti à la recherche de son frère jumeau maudit… Dracula. Survivront-ils aux crocs acérés du vampire ? Entièrement tourné en noir et blanc, le film intègre également des scènes en caméra infrarouge, renforçant l’immersion dans une atmosphère gothique.\n\nLes thèmes centraux explorés sont l’amitié, les liens fraternels et la mutation du corps.",
         afficheUrl: "https://drive.google.com/file/d/1KLPL2LVQPB6kmo2vdrn9OfA764kqtpNL/view?usp=sharing",
         videoUrl: "https://drive.google.com/file/d/180qpbv_1YzHYZERscoakgUDTc77UVfVj/view?usp=sharing",

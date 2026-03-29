@@ -3,6 +3,7 @@ import '../styles/variables.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import DarkModeToggle from '../components/DarkModeToggle.astro';
+import Favicon from '../assets/favicon.png'
 ---
 
 <!doctype html>
@@ -11,7 +12,7 @@ import DarkModeToggle from '../components/DarkModeToggle.astro';
 		<meta charset="UTF-8" />
 		<meta name="google-site-verification" content="EoONZoXDhO63Qlj9OVtc6MqW1O-jzZ36hJ_qlQLjbS4" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={Favicon.src} />
 		<meta name="generator" content={Astro.generator} />
 		<title>JOKHAN FILM PRODUCTION</title>
 	</head>
