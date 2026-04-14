@@ -13,7 +13,7 @@ export interface Film {
 export const displayedFilms: Film[] = [
     {
         id: 13,
-        titre: "JOKER 3 - SORTIE LE 11 AVRIL 2026",
+        titre: "JOKER 3 : The Last Joke",
         description: "PRÊT POUR UNE DERNIÈRE FOLIE ?\nJOKER 3 : The Last Joke\n\n2 ans après les événements de \"folie à deux\". Le chaos règne dans Gotham, causé par le nouveau Joker, malgré les efforts du chevalier noir et du Maire Harvey Dent.\n\nArthur Fleck vit paisiblement avec sa fille Robin reculé de la ville, jusqu'à une soirée tragique, qui poussera celui-ci a redevenir Joker pour une dernière danse sanglante.",
         afficheUrl: "https://drive.google.com/file/d/1LXKOD712kh2ebPe0KTCBoHutCPKEX7aa/view?usp=drive_link",
         videoUrl: "https://drive.google.com/file/d/1hGIjcD-TgpEyDXuYcZT4GnFvm8utk5pv/view?usp=drive_link",
