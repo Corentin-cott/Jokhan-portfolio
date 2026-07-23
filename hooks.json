@@ -1,16 +1,14 @@
 [
   {
     "id": "rebuild-portfolio",
-    "execute-command": "{{ getenv \"PROJECT_DIR\" }}/update.sh",
-    "command-working-directory": "{{ getenv \"PROJECT_DIR\" }}",
+    "execute-command": "{{ getenv `PROJECT_DIR` }}/update.sh",
+    "command-working-directory": "{{ getenv `PROJECT_DIR` }}",
+    "trigger-rule-mismatch-http-response-code": 403,
     "trigger-rule": {
       "match": {
         "type": "value",
-        "value": "{{ getenv \"WEBHOOK_SECRET\" }}",
-        "parameter": {
-          "source": "header",
-          "name": "X-Webhook-Token"
-        }
+        "value": "{{ getenv `WEBHOOK_SECRET` }}",
+        "parameter": { "source": "header", "name": "X-Webhook-Token" }
       }
     }
   }
