@@ -1,13 +1,23 @@
 ---
 import '../styles/variables.css';
+import { fileUrl, type SiteConfigRecord } from '../lib/pocketbase';
+
+interface Props { siteConfig: SiteConfigRecord | null }
+const { siteConfig } = Astro.props;
+
+const backgroundUrl = siteConfig?.image_footer ? fileUrl(siteConfig, siteConfig.image_footer, '1000x0') : '';
+const titre = siteConfig?.footer_titre || '2025  Jokhan Film Production';
+const texte = siteConfig?.footer_texte || 'Contenu par Ethan Ledoux / Site par Corentin Cottereau';
 ---
 
 <footer>
     <div class="header">
-        <img src={"https://drive.google.com/thumbnail?id="+"1C5MhnN3owNgSTT8hgGS2nw8yzfZ7x_XF"+"&sz=w1000"} alt="Background" class="background" loading="lazy" />
+        {backgroundUrl && (
+            <img src={backgroundUrl} alt="" class="background" loading="lazy" />
+        )}
         <div class="content">
-            <h1 class="header-title">2025  Jokhan Film Production</h1>
-            <p>Contenu par <strong>Ethan Ledoux</strong> / Site par <strong>Corentin Cottereau</strong></p>
+            <h1 class="header-title">{titre}</h1>
+            <p>{texte}</p>
         </div>
     </div>
 </footer>

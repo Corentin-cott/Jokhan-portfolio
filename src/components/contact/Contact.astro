@@ -1,41 +1,31 @@
 ---
 import '../../styles/variables.css';
+import { getSocialLinks } from '../../lib/pocketbase';
+
+const links = await getSocialLinks();
+
+const META: Record<string, { label: string; cls: string }> = {
+    instagram: { label: 'Instagram', cls: 'link_ig' },
+    youtube: { label: 'YouTube', cls: 'link_ytb' },
+    tiktok: { label: 'TikTok', cls: 'link_tiktok' },
+};
 ---
 
 <section class="contact-section">
     <h2>Mes réseaux / Prendre contact</h2>
 
     <div class="button_links_container" style="display: block">
-
-        <div class="button_item row-left">
-            <p class="button_text">
-                C'est sur <strong>Instagram</strong> que j'ai commencé à réaliser des mini-métrages en format vertical <em>(Reels)</em> il y a 4 ans, puis progressivement des <strong>courts-métrages</strong> plus complets.
-                Aujourd'hui, j'y fais la <strong>promotion de mes films</strong> via stories, <em>Reels</em> et publications <em>(affiches, bandes-annonces, photos de tournage)</em>.
-                J’y partage également du <strong>contenu privé</strong>, car c’est la <strong>plateforme où je suis le plus actif</strong>.
-            </p>
-            <a class="button_link link_ig" href="">
-                <span>Instagram</span>
-            </a>
-        </div>
-
-        <div class="button_item row-right">
-            <p class="button_text">
-                C'est sur <strong>YouTube</strong> que l'on peut retrouver <strong>tous mes films en intégralité</strong>, ainsi que les <strong>bandes-annonces</strong> et les <em>shorts</em> présentant les <strong>actualités et informations</strong> concernant mes projets.
-            </p>
-            <a class="button_link link_ytb" href="">
-                <span>YouTube</span>
-            </a>
-        </div>
-
-        <div class="button_item row-left">
-            <p class="button_text">
-                Sur <strong>TikTok</strong>, on y trouve du <strong>contenu privé et cinématographique</strong>, incluant <em>photos</em>, <em>bandes-annonces</em> et <em>affiches</em> de mes films.
-            </p>
-            <a class="button_link link_tiktok" href="">
-                <span>TikTok</span>
-            </a>
-        </div>
-
+        {links.map((link, index) => {
+            const meta = META[link.plateforme] ?? { label: link.plateforme, cls: '' };
+            return (
+                <div class={`button_item ${index % 2 === 0 ? 'row-left' : 'row-right'}`}>
+                    <p class="button_text" set:html={link.description}></p>
+                    <a class={`button_link ${meta.cls}`} href={link.url || '#'} target="_blank" rel="noopener">
+                        <span>{meta.label}</span>
+                    </a>
+                </div>
+            );
+        })}
     </div>
 
 </section>
@@ -130,7 +120,7 @@ import '../../styles/variables.css';
         .contact-section {
             padding: 20px;
             padding-top: 40px;
-            padding-bottom: 0px;
+            padding-bottom: 0;
         }
 
         .button_item {

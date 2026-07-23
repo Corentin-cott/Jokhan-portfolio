@@ -1,8 +1,9 @@
 ---
 import '../../styles/variables.css';
-import { formatVideoUrlByUrl } from "../../utils/googleDriveUrlFormatter.ts";
-import { displayedFilms } from "../../model.ts";
+import { formatVideoUrlByUrl } from "../../utils/googleDriveUrlFormatter";
+import { getFilms } from "../../lib/pocketbase";
 
+const films = await getFilms();
 ---
 
 <section class="film-catalog">
@@ -20,7 +21,7 @@ import { displayedFilms } from "../../model.ts";
     </form>
   </div>
   <div class="film-grid" id="film-grid">
-    {displayedFilms.map(film => (
+    {films.map(film => (
         <div class="film-card" data-title={film.titre.toLowerCase()}>
           <div class="video-thumbnail">
               {film.videoUrl && (
@@ -140,16 +141,16 @@ import { displayedFilms } from "../../model.ts";
     .film-catalog {
       padding: 20px;
       padding-top: 40px;
-      padding-bottom: 0px;
+      padding-bottom: 0;
     }
   }
 </style>
 
-<script>
+<script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const input = document.getElementById("search-input") as HTMLInputElement | null;
-    const form = document.getElementById("search-form") as HTMLFormElement | null;
-    const films = document.querySelectorAll<HTMLElement>(".film-card");
+    const input = document.getElementById("search-input");
+    const form = document.getElementById("search-form");
+    const films = document.querySelectorAll(".film-card");
 
     if (!input || !form) return;
 

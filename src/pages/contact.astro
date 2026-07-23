@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/variables.css';
 import ContactComponent from '../components/contact/Contact.astro';
 import SingleFilm from '../components/films/SingleFilm.astro';
-import {formatAfficheUrlByAfficheUrl, formatVideoUrlByUrl} from "../utils/googleDriveUrlFormatter.ts";
+import { formatVideoUrlByUrl } from "../utils/googleDriveUrlFormatter";
+import { getAutreMedias, fileUrl } from "../lib/pocketbase";
 
-import { displayedReviewVideo } from "../model.ts";
+const medias = await getAutreMedias();
 
 const singleCatalogueTextColor = 'var(--light-singleCatalogueColor)';
 const singleCatalogueBackgroundColor = 'var(--light-singleCatalogueBackgroundColor)';
@@ -17,13 +18,13 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
 
 <Layout>
     <ContactComponent />
-    {displayedReviewVideo.map((film, index) => (
+    {medias.map((media, index) => (
             <SingleFilm
-                    title={ film.titre || "Aucun titre."}
-                    afficheUrl={ formatAfficheUrlByAfficheUrl(film.afficheUrl)}
-                    description={ film.description || "Aucune description." }
-                    videoUrl={ formatVideoUrlByUrl(film.videoUrl) }
-                    dateDeSortie={ film.dateDeSortie }
+                    title={ media.titre || "Aucun titre."}
+                    afficheUrl={ media.image ? fileUrl(media, media.image, '400x0') : "" }
+                    description={ media.description || "Aucune description." }
+                    videoUrl={ media.videoUrl ? formatVideoUrlByUrl(media.videoUrl) : "" }
+                    dateDeSortie={ media.dateSortie }
                     assetsLoad={index === 0 ? "eager" : "lazy"}
                     filmSide={index % 2 === 0 ? "right" : "left"}
                     backgroundColor={index % 2 === 0 ? altSingleCatalogueBackgroundColor : singleCatalogueBackgroundColor}
