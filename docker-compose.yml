@@ -12,8 +12,8 @@ services:
       - "8085:80"
     restart: unless-stopped
     networks:
-      - pocketbase_jokhan_net
+      - pocketbase_jokhan_network
 
 networks:
-  pocketbase_jokhan_net:
+  pocketbase_jokhan_network:
     external: true
