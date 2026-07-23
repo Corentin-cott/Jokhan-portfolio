@@ -6,6 +6,8 @@ services:
       args:
         # URL PUBLIQUE de PocketBase, utilisée au build pour récupérer les données.
         POCKETBASE_URL: ${POCKETBASE_URL}
+        # Invalidation du cache pour refetch PocketBase : passe CACHEBUST=$(date +%s).
+        CACHEBUST: ${CACHEBUST:-0}
     ports:
       - "8085:80"
     restart: unless-stopped

@@ -5,6 +5,8 @@ RUN npm ci
 COPY . .
 ARG POCKETBASE_URL
 ENV POCKETBASE_URL=$POCKETBASE_URL
+# Change à chaque rebuild pour forcer un nouveau fetch PocketBase
+ARG CACHEBUST=0
 RUN npm run build
 
 FROM nginx:alpine
