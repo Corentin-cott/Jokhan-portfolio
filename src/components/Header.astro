@@ -1,23 +1,23 @@
 ---
 import '../styles/variables.css';
-import { Image } from 'astro:assets';
+import { fileUrl, type SiteConfigRecord } from '../lib/pocketbase';
 
-const image_id = "1I3O9r6ERoMdwJbztHJYvXhPuykALf87A";
+interface Props { siteConfig: SiteConfigRecord | null }
+const { siteConfig } = Astro.props;
+
+const backgroundUrl = siteConfig?.image_header ? fileUrl(siteConfig, siteConfig.image_header, '1800x0') : '';
+const titre = siteConfig?.header_titre || 'ETHAN LEDOUX';
+const sousTitre = siteConfig?.header_sous_titre || 'JOKHAN FILM PRODUCTION';
 ---
 
 <header>
     <div class="header">
-        <Image
-                src={`https://drive.google.com/thumbnail?id=${image_id}&sz=w1800`}
-                alt="Background"
-                class="background"
-                height={1}
-                width={1}
-                loading="eager"
-        />
+        {backgroundUrl && (
+            <img src={backgroundUrl} alt="" class="background" loading="eager" />
+        )}
         <div class="content">
-            <h1 class="header-title">ETHAN LEDOUX</h1>
-            <p>JOKHAN FILM PRODUCTION</p>
+            <h1 class="header-title">{titre}</h1>
+            <p>{sousTitre}</p>
         </div>
     </div>
 </header>

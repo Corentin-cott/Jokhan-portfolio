@@ -6,12 +6,10 @@ import VoirPlus from '../components/index/VoirPlus.astro';
 import SingleFilm from '../components/films/SingleFilm.astro';
 import PlaceholderImage from '../assets/placeholder.webp';
 
-import { displayedFilms } from "../model.ts";
-import {formatAfficheUrlByAfficheUrl, formatVideoUrlByUrl} from "../utils/googleDriveUrlFormatter.ts";
-const selectedFilmIds = [13, 4, 1, 3];
-const selectedFilms = selectedFilmIds.map(id =>
-    displayedFilms.find(film => film.id === id)!
-);
+import { getTopFilms, fileUrl } from '../lib/pocketbase';
+import { formatVideoUrlByUrl } from '../utils/googleDriveUrlFormatter';
+
+const selectedFilms = await getTopFilms();
 
 const singleCatalogueTextColor = 'var(--light-singleCatalogueColor)';
 const singleCatalogueBackgroundColor = 'var(--light-singleCatalogueBackgroundColor)';
@@ -26,10 +24,10 @@ const altSingleCatalogueBorderColor = 'var(--light-alt-singleCatalogueBorderColo
     {selectedFilms.map((film, index) => (
             <SingleFilm
                     title={ film.titre || "Aucun titre."}
-                    afficheUrl={ formatAfficheUrlByAfficheUrl(film.afficheUrl) || PlaceholderImage.src}
+                    afficheUrl={ film.affiche ? fileUrl(film, film.affiche, '400x0') : PlaceholderImage.src}
                     description={ film.description || "Aucune description." }
-                    videoUrl={ formatVideoUrlByUrl(film.videoUrl) }
-                    dateDeSortie={ film.dateDeSortie }
+                    videoUrl={ film.videoUrl ? formatVideoUrlByUrl(film.videoUrl) : "" }
+                    dateDeSortie={ film.dateSortie }
                     assetsLoad={index === 0 ? "eager" : "lazy"}
                     filmSide={index % 2 === 0 ? "right" : "left"}
                     backgroundColor={index % 2 === 0 ? altSingleCatalogueBackgroundColor : singleCatalogueBackgroundColor}

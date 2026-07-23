@@ -1,7 +1,17 @@
 services:
   jokhan-portfolio:
     container_name: site-jokhan_portfolio
-    build: .
+    build:
+      context: .
+      args:
+        # URL PUBLIQUE de PocketBase, utilisée au build pour récupérer les données.
+        POCKETBASE_URL: ${POCKETBASE_URL}
     ports:
       - "8085:80"
     restart: unless-stopped
+    networks:
+      - pocketbase_jokhan_net
+
+networks:
+  pocketbase_jokhan_net:
+    external: true

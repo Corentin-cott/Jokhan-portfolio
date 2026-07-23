@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import DarkModeToggle from '../components/DarkModeToggle.astro';
 import Favicon from '../assets/favicon.png'
+import { getSiteConfig } from '../lib/pocketbase';
+
+const siteConfig = await getSiteConfig();
 ---
 
 <!doctype html>
@@ -18,11 +21,11 @@ import Favicon from '../assets/favicon.png'
 	</head>
 	<body>
 		<DarkModeToggle />
-		<Header />
+		<Header siteConfig={siteConfig} />
 		<main>
 			<slot />
 		</main>
-		<Footer />
+		<Footer siteConfig={siteConfig} />
 	</body>
 </html>
 
