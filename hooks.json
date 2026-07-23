@@ -1,0 +1,17 @@
+[
+  {
+    "id": "rebuild-portfolio",
+    "execute-command": "{{ getenv \"PROJECT_DIR\" }}/update.sh",
+    "command-working-directory": "{{ getenv \"PROJECT_DIR\" }}",
+    "trigger-rule": {
+      "match": {
+        "type": "value",
+        "value": "{{ getenv \"WEBHOOK_SECRET\" }}",
+        "parameter": {
+          "source": "header",
+          "name": "X-Webhook-Token"
+        }
+      }
+    }
+  }
+]
